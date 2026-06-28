@@ -1,4 +1,4 @@
-/* ═══════════════════════════════════════════
+﻿/* ═══════════════════════════════════════════
    REDTRANS — Design System v5
    Primary: Deep Crimson
    Inspired by Spline.design: 3D-forward hero, clean logo grids, prominent partner visuals
@@ -168,7 +168,7 @@ p  { text-wrap: pretty; margin-bottom: 0; }
 
 .header-nav { display: flex; align-items: center; gap: var(--space-lg); }
 .header-nav a {
-  font-size: var(--text-sm); font-weight: 500;
+  font-size: var(--text-md); font-weight: 500;
   color: oklch(1 0 0 / 0.72);
   position: relative; padding: 0.4em 0;
   transition: color var(--dur-fast);
@@ -1281,14 +1281,14 @@ p  { text-wrap: pretty; margin-bottom: 0; }
   gap: var(--space-lg);
 }
 .footer-info h4 {
-  font-size: var(--text-xs);
+  font-size: var(--text-base);
   text-transform: uppercase; letter-spacing: 0.08em;
   color: oklch(1 0 0 / 0.35);
   margin-bottom: var(--space-sm); font-weight: 600;
 }
-.footer-info p { font-size: var(--text-xs); line-height: var(--line-height-relaxed); margin-bottom: 0.15em; }
+.footer-info p { font-size: var(--text-base); line-height: var(--line-height-relaxed); margin-bottom: 0.15em; }
 .footer-contact .fc-item { margin-bottom: var(--space-sm); }
-.footer-contact .fc-label { font-size: var(--text-xs); font-weight: 600; color: oklch(1 0 0 / 0.45); }
+.footer-contact .fc-label { font-size: var(--text-base); font-weight: 600; color: oklch(1 0 0 / 0.45); }
 .footer-contact .fc-num { font-size: var(--text-md); font-weight: 700; color: oklch(1 0 0 / 0.82); }
 
 .footer-bottom {
