@@ -1,0 +1,270 @@
+.notice-board {
+	font-weight: 200;
+	color: #232323;
+	border-top: 1px solid #ccc;
+	width: 100%;
+}
+
+.notice-board-search {
+	margin-bottom: 10px;
+}
+
+.notice-board-search .fa-search {
+	margin-right: 3px;
+	position: relative;
+	top: -1px;
+}
+
+.notice-board-search .input-group-addon {
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+.notice-board-search .input-group-addon select {
+	border-right: none;
+	min-width: 80px;
+	border-top-left-radius: 4px !important;
+	border-bottom-left-radius: 4px !important;
+}
+
+.notice-board-search .input-group-addon button {
+	border-left: none;
+	border-radius: 0;
+	background: #eee;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.notice-board thead {
+	background: #fbfbfb;
+	border-bottom: 1px solid #ccc;
+}
+
+.notice-board tr td {
+	text-align: center;
+	padding: 15px 0;
+}
+
+.notice-board tr {
+	border-bottom: 1px solid #ccc;
+}
+
+.notice-board thead tr td {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.notice-board tbody tr td:nth-child(2) {
+	text-align: left;
+}
+
+.notice-board .notice {
+	font-weight: 500;
+	background: #fbfbfb;
+}
+
+.notice-board a {
+	color: #232323;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+	color: #666;
+}
+
+.notice-board .number,
+.notice-board .author,
+.notice-board .creat_at,
+.notice-board .view {
+	width: 120px;
+}
+
+
+.article-detail .detail-header .title {
+	font-size: 24px;
+	color: #232323;
+	padding: 12px 0;
+}
+
+.article-detail .detail-header span {
+	font-size: 16px;
+	color: #999999;
+	font-weight: 200;
+	margin-right: 15px;
+}
+
+.article-detail .detail-header span i {
+	margin-right: 5px;
+}
+
+.article-detail .detail-header {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 15px;
+	margin-bottom: 35px;
+}
+
+.article-detail .detail-navigation {
+	margin-bottom: 35px;
+}
+
+.article-detail .detail-navigation ul {
+	margin: 0;
+	padding: 0;
+	margin-top: 35px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.article-detail .detail-navigation ul li {
+	list-style: none;
+	padding: 15px 0;
+}
+
+.article-detail .detail-navigation ul li:first-child {
+	border-bottom: 1px solid #ccc;
+}
+
+.article-detail .detail-navigation ul li:last-child {
+	border-top: 1px solid #ccc;
+	margin-top: -1px;
+}
+
+.article-detail .detail-navigation ul li span {
+	padding: 0 15px;
+	position: absolute;
+}
+
+.article-detail .detail-navigation ul li span i {
+	margin-right: 5px;
+}
+
+.article-detail .detail-navigation ul li a {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 100%;
+	display: block;
+	padding-left: 100px;
+}
+
+.article-detail article img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.article-detail .detail-filelist {
+	margin-top: 35px;
+}
+
+.article-detail .detail-filelist ul {
+	margin: 0;
+	padding: 0;
+}
+
+.article-detail .detail-filelist ul li {
+	list-style: none;
+	padding: 7px 0;
+}
+
+.article-detail .detail-filelist ul li span {
+	padding: 0 10px;
+}
+
+.article-detail .detail-filelist ul li a i {
+	margin-right: 4px;
+}
+
+.article-detail .detail-filelist ul li a {
+	background: #0D95E8;
+	padding: 5px 10px;
+	border-radius: 4px;
+	color: #fff;
+	transition: 0.5s ease;
+	text-decoration: none;
+}
+
+.article-detail .detail-filelist ul li a:hover {
+	background: #204D74;
+}
+
+@media (max-width: 1200px) {
+	.notice-board tr td {
+		display: block;
+	}
+
+	.notice-board .number,
+	.notice-board .author,
+	.notice-board .creat_at,
+	.notice-board .view {
+		display: block;
+		float: left;
+	}
+
+	.notice-board .author,
+	.notice-board .creat_at,
+	.notice-board .view {
+		color: #999;
+		margin-right: 15px;
+		margin-top: 5px;
+		float: right;
+	}
+
+	.notice-board .author:before,
+	.notice-board .creat_at:before,
+	.notice-board .view:before {
+		font: normal normal normal 14px/1 FontAwesome;
+		display: inline-block;
+		padding-right: 5px;
+	}
+
+	.notice-board .author:before {
+		content: "\f007";
+	}
+
+	.notice-board .creat_at:before {
+		content: "\f017";
+	}
+
+	.notice-board .view:before {
+		content: "\f06e";
+	}
+
+	.notice-board thead {
+		display: none;
+	}
+
+	.notice-board tr td {
+		padding: 5px 0;
+		text-align: left;
+	}
+
+	.notice-board tr {
+		padding: 15px;
+		display: block;
+	}
+
+	.notice-board tr:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+	.notice-board .number,
+	.notice-board .author,
+	.notice-board .creat_at,
+	.notice-board .view {
+		width: auto;
+	}
+
+	.notice-board .number {
+		background: #fff;
+		border: 1px solid #ccc;
+		padding: 4px 5px;
+		margin-right: 5px;
+		margin-bottom: 16px;
+	}
+
+
+}

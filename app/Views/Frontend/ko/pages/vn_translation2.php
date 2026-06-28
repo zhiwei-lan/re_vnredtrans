@@ -1,0 +1,193 @@
+<?= $this->extend('Frontend/default/layout/index_sub') ?>
+<?= $this->section('page_title') ?>
+<?= esc($active_menus['lang_title']??$active_menus['title']) ?>
+<?= $this->endSection() ?>
+
+<?= $this->section('content') ?>
+<div class="subpage sub2">
+        <div class="top-banner container">
+            <div class="title">통역 비용</div>
+        </div>
+        <div class="item-1 container">
+            <div class="hd">
+                <div class="title">안내사항</div>
+            </div>
+            <div class="bd">
+                <div class="text">
+                    <div class="t2">가격 및 언어 안내</div>
+                    <div class="t3">
+                        레드트랜스는 통역이 필요한 용도에 따라 통역사를 섭외하여 합리적인 가격으로 통역 서비스를 제공 합니다. 
+<br><span>통역 서비스는 장소 및 일정 조율이 필요하므로</span> 문의를 남겨 주시면 담당자가 직접 연락을 드립니다. 
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="/assets/images/sub2_001.png">
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="item-2 container">-->
+        <!--    <div class="hd">비용 산정 기준</div>-->
+        <!--    <div class="press">-->
+        <!--        <div class="item">-->
+        <!--            <div class="num">01</div>-->
+        <!--            <div class="txt">-->
+        <!--                사용목적-->
+        <!--            </div>-->
+        <!--            <div class="dot"></div>-->
+        <!--        </div>-->
+        <!--        <div class="item">-->
+        <!--            <div class="num">02</div>-->
+        <!--            <div class="txt">-->
+        <!--                대내용<br>대외용-->
+        <!--            </div>-->
+        <!--            <div class="dot"></div>-->
+        <!--        </div>-->
+        <!--        <div class="item">-->
+        <!--            <div class="num">03</div>-->
+        <!--            <div class="txt">-->
+        <!--                일반용<br>비즈니스용-->
+        <!--            </div>-->
+        <!--            <div class="dot"></div>-->
+        <!--        </div>-->
+        <!--        <div class="item">-->
+        <!--            <div class="num">04</div>-->
+        <!--            <div class="txt">-->
+        <!--                전문분야<br>특수분야-->
+        <!--            </div>-->
+        <!--            <div class="dot"></div>-->
+        <!--        </div>-->
+        <!--        <div class="item">-->
+        <!--            <div class="num">05</div>-->
+        <!--            <div class="txt">-->
+        <!--                의역 난이도-->
+        <!--            </div>-->
+        <!--            <div class="dot"></div>-->
+        <!--        </div>-->
+        <!--        <div class="item">-->
+        <!--            <div class="num">06</div>-->
+        <!--            <div class="txt">-->
+        <!--                일반납품<br>긴급납품-->
+        <!--            </div>-->
+        <!--            <div class="dot"></div>-->
+        <!--        </div>-->
+        <!--        <div class="item">-->
+        <!--            <div class="num">07</div>-->
+        <!--            <div class="txt">-->
+        <!--                합리적<br>번역단가 책정-->
+        <!--            </div>-->
+        <!--            <div class="dot"></div>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+        <!--<div class="item-3 container">-->
+        <!--    <div class="hd">페이지별 단가</div>-->
+        <!--    <div class="bd">-->
+        <!--        <div class="table services-list">-->
+        <!--            <table>-->
+        <!--                <thead>-->
+        <!--                    <tr>-->
+        <!--                        <td>언어</td>-->
+        <!--                        <td>외국어 -—> 한국어</td>-->
+        <!--                        <td>한국어 -—> 외국어</td>-->
+        <!--                        <td>산출 기준</td>-->
+        <!--                    </tr>-->
+        <!--                </thead>-->
+        <!--                <tbody class="space"></tbody>-->
+        <!--                <tbody>-->
+        <!--                    <tr>-->
+        <!--                        <td><img src="/assets/images/icon_country_03.png">영어</td>-->
+        <!--                        <td>20,000원</td>-->
+        <!--                        <td>20,000원</td>-->
+        <!--                        <td>1페이지<br>(영한 200단어 / 한영 500자 기준)</td>-->
+        <!--                    </tr>-->
+        <!--                    <tr>-->
+        <!--                        <td><img src="/assets/images/icon_country_06.png">중국어</td>-->
+        <!--                        <td>20,000원</td>-->
+        <!--                        <td>20,000원</td>-->
+        <!--                        <td>1페이지<br>(한중 / 중한 500자 기준)</td>-->
+        <!--                    </tr>-->
+        <!--                    <tr>-->
+        <!--                        <td><img src="/assets/images/icon_country_08.png">일본어</td>-->
+        <!--                        <td>20,000원</td>-->
+        <!--                        <td>20,000원</td>-->
+        <!--                        <td>1페이지<br>(한일 / 일한 500자 기준)</td>-->
+        <!--                    </tr>-->
+        <!--                    <tr>-->
+        <!--                        <td><img src="/assets/images/icon_country_10.png">베트남어</td>-->
+        <!--                        <td>30,000원</td>-->
+        <!--                        <td>30,000원</td>-->
+        <!--                        <td>1페이지<br>(한베 / 베한 200단어 기준)</td>-->
+        <!--                    </tr>-->
+        <!--                    <tr>-->
+        <!--                        <td><img src="/assets/images/icon_country_12.png">러시아어</td>-->
+        <!--                        <td>30,000원</td>-->
+        <!--                        <td>30,000원</td>-->
+        <!--                        <td>1페이지<br>(한러 / 러한 200단어 기준)</td>-->
+        <!--                    </tr>-->
+        <!--                    <tr>-->
+        <!--                        <td><img src="/assets/images/icon_country_14.png">우즈벡어</td>-->
+        <!--                        <td>35,000원</td>-->
+        <!--                        <td>35,000원</td>-->
+        <!--                        <td>1페이지<br>(한우즈벡 / 우즈벡한 200단어 기준)</td>-->
+        <!--                    </tr>-->
+        <!--                    <tr>-->
+        <!--                        <td><img src="/assets/images/icon_country_16.png">인니어</td>-->
+        <!--                        <td>40,000원</td>-->
+        <!--                        <td>40,000원</td>-->
+        <!--                        <td>1페이지<br>(한인니 / 인니한 200단어 기준)</td>-->
+        <!--                    </tr>-->
+        <!--                    <tr>-->
+        <!--                        <td><img src="/assets/images/icon_country_18.png">말레이어</td>-->
+        <!--                        <td>40,000원</td>-->
+        <!--                        <td>40,000원</td>-->
+        <!--                        <td>1페이지<br>(한말레이 / 말레이한 200단어 기준)</td>-->
+        <!--                    </tr>-->
+        <!--                </tbody>-->
+        <!--            </table>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--    <div class="ft">-->
+        <!--        ※ 기타 외국어-—>외국어 번역의 경우, 별도 문의 요망  ※ 부가세 별도-->
+        <!--    </div>-->
+        <!--    <div class="bd">-->
+        <!--        <div class="table services-list  services-list2">-->
+        <!--            <table>-->
+        <!--                <tbody>-->
+        <!--                    <tr>-->
+        <!--                        <td>일반번역</td>-->
+        <!--                        <td>기본 문서, 편지, PR문서 비상업 문서 등</td>-->
+        <!--                        <td width="300">100%</td>-->
+        <!--                    </tr>-->
+        <!--                    <tr>-->
+        <!--                        <td>비즈니스 번역(일반)</td>-->
+        <!--                        <td>레포트, 이력서, 자기소개서, 논문(학사), 문과계통 일반논문, 계약서, 업무 메일</td>-->
+        <!--                        <td>130%</td>-->
+        <!--                    </tr>-->
+        <!--                    <tr>-->
+        <!--                        <td>비즈니스 번역(전문)</td>-->
+        <!--                        <td>회의록, 전문 메뉴얼, 기술 메뉴얼, 학술지, 전문분야 논문 등</td>-->
+        <!--                        <td>150%</td>-->
+        <!--                    </tr>-->
+        <!--                    <tr>-->
+        <!--                        <td>특수 번역</td>-->
+        <!--                        <td>수필, 시집, 법률, 의학, 이과계통 논문, 게임, 영상 등</td>-->
+        <!--                        <td>200%</td>-->
+        <!--                    </tr>-->
+        <!--                </tbody>-->
+        <!--            </table>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+
+        <div class="container order-bar">
+            <a class="submit" href="/ko/pages/vn_translation2_1">신청하기</a>
+        </div>
+
+    </div>
+
+<?= $this->endSection() ?>	
+
+
+					
+				

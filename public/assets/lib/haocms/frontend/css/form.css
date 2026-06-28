@@ -1,0 +1,135 @@
+#form-render .form-control {
+	border: none;
+	background-color: #fff;
+	box-shadow: none;
+	border-radius: 10px;
+	font-size: 16px;
+	font-weight: 400;
+	color: #000;
+	border: 1px solid #ccc;
+}
+#form-render input.form-control ,
+#form-render select.form-control {
+	line-height: 45px;
+	height: 45px;
+}
+#form-render .rendered-form label {
+	font-size: 16px;
+	font-weight: 400;
+}
+#form-render label.formbuilder-text-label , 
+#form-render label.formbuilder-select-label ,
+#form-render label.formbuilder-radio-group-label ,
+#form-render label.formbuilder-checkbox-group-label ,
+#form-render label.formbuilder-textarea-label ,
+#form-render label.formbuilder-file-label {
+	font-size: 18px;
+	font-weight: 500;
+}
+#form-render .checkbox-group ,
+#form-render .radio-group {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+#form-render .formbuilder-checkbox ,
+#form-render .formbuilder-radio {
+	margin-right: 15px;
+}
+.formbuilder-checkbox-group:has(.documents) .formbuilder-checkbox-group-label {
+	display: none;
+}
+#form-render .formbuilder-checkbox:has(.documents) label{	
+	font-size: 18px;
+	font-weight: 500;
+}
+#form-render .formbuilder-button {
+	text-align: center;
+}
+#form-render .formbuilder-button .btn-default.btn {
+	background-color: #000;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+}
+#form-render .form-group {
+	padding-bottom: 15px;
+}
+#form-render input[type=file] {
+    position: relative;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: 44px;
+    cursor: pointer;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    width: 100%;
+    margin-bottom: -44px;
+    z-index: 2;
+}
+#form-render .formbuilder-file:after {
+	content: var(--file-content);
+	padding-left: 15px;
+	display: block;
+	font-size: 16px;
+	height: 44px;
+	line-height: 44px;
+	color: #333;
+	width: 100%;
+	border-radius: 10px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	cursor: pointer;
+}
+#form-render .formbuilder-file:before {
+	content: '';
+    display: block;
+    font-size: 16px;
+    height: 44px;
+    line-height: 44px;
+    color: #333;
+    width: 120px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #666;
+    color: #fff;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+.error.help-block {
+	font-style: normal;
+	position: absolute;
+}
+.has-feedback label~.form-control-feedback {
+    top: 37px;
+    right: 17px;
+}
+
+.has-success.has-error.has-feedback .error.help-block.serve-error ,.has-error.has-feedback .error.help-block.serve-error{
+    display: block;
+}
+.has-success.has-feedback .error.help-block.serve-error {
+    display: none;
+}
+.input-hidden {
+	height: 0;
+	width:0;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	border: none;
+}

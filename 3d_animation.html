@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedTrans - 3D循环动画展示</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { overflow: hidden; background: #0a0a0a; font-family: 'Noto Sans KR', sans-serif; }
+
+        #canvas-container {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            perspective: 1200px; overflow: hidden;
+        }
+
+        .slides-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        .slide {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0; transition: opacity 1s ease-in-out;
+            transform-style: preserve-3d; pointer-events: none;
+        }
+        .slide.active { opacity: 1; pointer-events: auto; }
+
+        .bg-layer {
+            position: absolute; top: -5%; left: -5%; width: 110%; height: 110%;
+            background-size: cover; background-position: center; background-repeat: no-repeat;
+            animation: bgBounce 12s ease-in-out infinite;
+            filter: brightness(0.85) contrast(1.05) saturate(1.1);
+        }
+        @keyframes bgBounce {
+            0%, 100% { transform: scale(1) translate(0, 0); }
+            25% { transform: scale(1.03) translate(-1%, -0.5%); }
+            50% { transform: scale(1.06) translate(-1%, -1%); }
+            75% { transform: scale(1.03) translate(0%, -0.5%); }
+        }
+
+        .slide:nth-child(1) .bg-layer {
+            background-image: url('https://vn.redtrans.co.kr/uploads/images/2026/03/02/1772428454_1e39790be8aa5f413182.png');
+        }
+        .slide:nth-child(2) .bg-layer {
+            background-image: url('https://vn.redtrans.co.kr/uploads/images/2026/03/02/1772428372_25612ff855aaf9b04f7f.png');
+        }
+        .slide:nth-child(3) .bg-layer {
+            background-image: url('https://vn.redtrans.co.kr/uploads/images/2026/03/02/1772428403_8f38de8ee2e88c36c47b.png');
+        }
+
+        .overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(5,10,25,0.3) 0%, rgba(5,10,25,0.1) 30%, rgba(5,10,25,0.1) 70%, rgba(5,10,25,0.4) 100%);
+        }
+
+        .text-mask {
+            position: absolute; top: 28%; left: 50%; transform: translateX(-50%);
+            width: 55%; max-width: 700px; height: 45%;
+            background: radial-gradient(ellipse, rgba(8,12,22,0.92) 0%, rgba(8,12,22,0.75) 40%, rgba(8,12,22,0.3) 70%, transparent 100%);
+            filter: blur(25px); pointer-events: none;
+        }
+
+        .text-scene {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            transform-style: preserve-3d; text-align: center;
+            width: 90%; max-width: 900px; z-index: 10;
+        }
+
+        .main-title { transform-style: preserve-3d; margin-bottom: 35px; }
+        .main-title .line {
+            display: block; font-size: clamp(2.2rem, 5.5vw, 4.5rem); font-weight: 900;
+            color: #fff; letter-spacing: 0.05em; line-height: 1.3;
+            text-shadow: 0 0 30px rgba(0,0,0,0.8), 0 4px 12px rgba(0,0,0,0.9), 0 0 20px rgba(100,150,255,0.3);
+        }
+        .sub-title { transform-style: preserve-3d; margin-top: 25px; }
+        .sub-title .line {
+            display: block; font-size: clamp(0.95rem, 2.2vw, 1.4rem); font-weight: 400;
+            color: rgba(255,255,255,0.95); letter-spacing: 0.08em; line-height: 1.6;
+            text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9);
+        }
+
+        /* ============================================ */
+        /* 统一的淡入动画 - 文字始终保持完整 */
+        /* ============================================ */
+
+        .slide .line {
+            opacity: 0;
+        }
+
+        /* 动画类 - 由JS动态添加 */
+        .anim-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* 淡入动画：只改变透明度，不改变大小或位置，文字始终完整 */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* ===== 装饰几何体 ===== */
+        .geo-shapes { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; transform-style: preserve-3d; z-index: 5; }
+        .shape { position: absolute; border: 1.5px solid rgba(100,150,255,0.25); background: rgba(100,150,255,0.03); backdrop-filter: blur(1px); }
+        .shape-1 { width: 120px; height: 120px; top: 8%; left: 5%; border-radius: 16px; animation: rot1 18s linear infinite, fl1 9s ease-in-out infinite; }
+        .shape-2 { width: 80px; height: 80px; top: 75%; right: 10%; border-radius: 50%; border-color: rgba(255,120,80,0.2); background: rgba(255,120,80,0.03); animation: rot2 22s linear infinite, fl2 11s ease-in-out infinite; }
+        .shape-3 { width: 60px; height: 60px; top: 15%; right: 20%; transform: rotate(45deg); border-color: rgba(80,200,150,0.2); background: rgba(80,200,150,0.03); animation: rot3 14s linear infinite, fl3 8s ease-in-out infinite; }
+        .shape-4 { width: 150px; height: 1px; top: 40%; left: 0; background: linear-gradient(90deg, transparent, rgba(100,150,255,0.3), transparent); animation: sweep1 7s ease-in-out infinite; }
+        .shape-5 { width: 1px; height: 150px; top: 0; right: 25%; background: linear-gradient(180deg, transparent, rgba(255,120,80,0.25), transparent); animation: sweep2 9s ease-in-out infinite; }
+
+        @keyframes rot1 { 0% { transform: rotate(0) rotateX(0) rotateY(0); } 100% { transform: rotate(360deg) rotateX(360deg) rotateY(180deg); } }
+        @keyframes rot2 { 0% { transform: rotate(0); } 100% { transform: rotate(-360deg); } }
+        @keyframes rot3 { 0% { transform: rotate(45deg) rotateX(0); } 100% { transform: rotate(405deg) rotateX(360deg); } }
+        @keyframes fl1 { 0%,100% { transform: translateY(0) translateZ(0); } 50% { transform: translateY(-25px) translateZ(40px); } }
+        @keyframes fl2 { 0%,100% { transform: translateY(0) translateZ(0); } 50% { transform: translateY(15px) translateZ(-25px); } }
+        @keyframes fl3 { 0%,100% { transform: translateY(0) translateZ(0) rotate(45deg); } 50% { transform: translateY(-15px) translateZ(30px) rotate(45deg); } }
+        @keyframes sweep1 { 0%,100% { transform: translateX(-100%); opacity: 0; } 50% { transform: translateX(100vw); opacity: 0.6; } }
+        @keyframes sweep2 { 0%,100% { transform: translateY(-100%); opacity: 0; } 50% { transform: translateY(100vh); opacity: 0.6; } }
+
+        /* ===== 粒子 ===== */
+        .particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 6; }
+        .particle { position: absolute; width: 3px; height: 3px; background: rgba(255,255,255,0.4); border-radius: 50%; animation: pFloat linear infinite; }
+        @keyframes pFloat { 0% { transform: translateY(100vh) scale(0); opacity: 0; } 10% { opacity: 0.6; transform: scale(1); } 90% { opacity: 0.6; } 100% { transform: translateY(-10vh) translateX(30px) scale(0); opacity: 0; } }
+
+        /* ===== 底部光效 ===== */
+        .glow-bottom { position: absolute; bottom: -80px; left: 50%; transform: translateX(-50%); width: 500px; height: 160px; background: radial-gradient(ellipse, rgba(100,150,255,0.15) 0%, transparent 70%); animation: gPulse 5s ease-in-out infinite; z-index: 4; }
+        @keyframes gPulse { 0%,100% { opacity: 0.4; transform: translateX(-50%) scale(1); } 50% { opacity: 0.7; transform: translateX(-50%) scale(1.15); } }
+
+        /* ===== 指示器 ===== */
+        .slide-indicators { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; align-items: center; z-index: 20; }
+        .indicator { width: 40px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .indicator.active { background: rgba(100,150,255,0.6); width: 60px; }
+        .indicator:hover { background: rgba(255,255,255,0.4); }
+        .indicator .progress { position: absolute; top: 0; left: 0; height: 100%; width: 0%; background: rgba(100,150,255,0.9); border-radius: 2px; }
+
+        .loop-indicator { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; align-items: center; z-index: 20; }
+        .loop-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.3); animation: dPulse 2s ease-in-out infinite; }
+        .loop-dot:nth-child(2) { animation-delay: 0.3s; }
+        .loop-dot:nth-child(3) { animation-delay: 0.6s; }
+        @keyframes dPulse { 0%,100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.5); opacity: 1; background: rgba(100,150,255,0.8); } }
+        .loop-text { color: rgba(255,255,255,0.4); font-size: 0.7rem; margin-left: 10px; letter-spacing: 0.2em; }
+
+        .scene-rotate { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform-style: preserve-3d; animation: sTilt 12s ease-in-out infinite; }
+        @keyframes sTilt { 0%,100% { transform: rotateX(0) rotateY(0); } 25% { transform: rotateX(0.5deg) rotateY(0.5deg); } 75% { transform: rotateX(-0.5deg) rotateY(-0.5deg); } }
+
+        @media (max-width: 768px) {
+            .shape-1, .shape-2, .shape-3 { display: none; }
+            .text-mask { width: 80%; height: 50%; }
+            .main-title .line { font-size: clamp(1.8rem, 8vw, 3rem); }
+            .sub-title .line { font-size: clamp(0.85rem, 3.5vw, 1.2rem); }
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container">
+        <div class="scene-rotate">
+            <div class="slides-container" id="slidesContainer">
+
+                <div class="slide active" data-index="0">
+                    <div class="bg-layer"></div>
+                    <div class="overlay"></div>
+                    <div class="text-mask"></div>
+                    <div class="geo-shapes">
+                        <div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div>
+                        <div class="shape shape-4"></div><div class="shape shape-5"></div>
+                    </div>
+                    <div class="particles" data-slide="0"></div>
+                    <div class="glow-bottom"></div>
+                    <div class="text-scene">
+                        <div class="main-title">
+                            <span class="line line1" data-anim-delay="300">고객의 경험</span>
+                            <span class="line line2" data-anim-delay="600">레드트랜스의 이야기</span>
+                        </div>
+                        <div class="sub-title">
+                            <span class="line line1" data-anim-delay="1000">인터뷰와 실제 사례로 증명된</span>
+                            <span class="line line2" data-anim-delay="1300">베트남 진출의 모든 순간</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide" data-index="1">
+                    <div class="bg-layer"></div>
+                    <div class="overlay"></div>
+                    <div class="text-mask"></div>
+                    <div class="geo-shapes">
+                        <div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div>
+                        <div class="shape shape-4"></div><div class="shape shape-5"></div>
+                    </div>
+                    <div class="particles" data-slide="1"></div>
+                    <div class="glow-bottom"></div>
+                    <div class="text-scene">
+                        <div class="main-title">
+                            <span class="line line1" data-anim-delay="300">베트남 법인 설립</span>
+                            <span class="line line2" data-anim-delay="600">새로운 기준을 제시하다</span>
+                        </div>
+                        <div class="sub-title">
+                            <span class="line line1" data-anim-delay="1000">글로벌 인사이트와</span>
+                            <span class="line line2" data-anim-delay="1300">로컬 네트워크를 아우르는 레드트랜스</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide" data-index="2">
+                    <div class="bg-layer"></div>
+                    <div class="overlay"></div>
+                    <div class="text-mask"></div>
+                    <div class="geo-shapes">
+                        <div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div>
+                        <div class="shape shape-4"></div><div class="shape shape-5"></div>
+                    </div>
+                    <div class="particles" data-slide="2"></div>
+                    <div class="glow-bottom"></div>
+                    <div class="text-scene">
+                        <div class="main-title">
+                            <span class="line line1" data-anim-delay="300">복잡한 인허가</span>
+                            <span class="line line2" data-anim-delay="600">레드트랜스로 단순하게</span>
+                        </div>
+                        <div class="sub-title">
+                            <span class="line line1" data-anim-delay="1000">법인 설립부터 인허가까지,</span>
+                            <span class="line line2" data-anim-delay="1300">원스톱 솔루션을 제공합니다.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="slide-indicators" id="indicators">
+                <div class="indicator active" data-slide="0"><div class="progress"></div></div>
+                <div class="indicator" data-slide="1"><div class="progress"></div></div>
+                <div class="indicator" data-slide="2"><div class="progress"></div></div>
+            </div>
+
+            <div class="loop-indicator">
+                <div class="loop-dot"></div><div class="loop-dot"></div><div class="loop-dot"></div>
+                <span class="loop-text">LOOP</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ANIMATION_DURATION = 2100; // 文字淡入动画完成时间(ms)
+        const DISPLAY_DURATION = 4000;   // 停留4秒后切换
+        const TOTAL_DURATION = ANIMATION_DURATION + DISPLAY_DURATION;
+
+        function createParticles(idx) {
+            const box = document.querySelector(`[data-slide="${idx}"]`);
+            if (!box || box.children.length) return;
+            for (let i = 0; i < 25; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                p.style.animationDelay = Math.random() * 10 + 's';
+                p.style.width = p.style.height = (Math.random() * 3 + 2) + 'px';
+                box.appendChild(p);
+            }
+        }
+        [0,1,2].forEach(i => createParticles(i));
+
+        // 播放幻灯片的文字动画
+        function playTextAnimation(slideIndex) {
+            const slide = slides[slideIndex];
+            const lines = slide.querySelectorAll('.line');
+
+            // 先移除所有动画类，重置状态
+            lines.forEach(line => {
+                line.classList.remove('anim-fade-in');
+                line.style.opacity = '0';
+            });
+
+            // 强制重排，确保动画可以重新触发
+            void slide.offsetWidth;
+
+            // 按延迟时间依次添加动画类
+            lines.forEach(line => {
+                const delay = parseInt(line.dataset.animDelay) || 0;
+                setTimeout(() => {
+                    line.classList.add('anim-fade-in');
+                }, delay);
+            });
+        }
+
+        let cur = 0, trans = false;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        let to = null, pf = null, pst = 0;
+
+        function updateProg() {
+            const elapsed = Date.now() - pst;
+            const prog = Math.min(elapsed / TOTAL_DURATION, 1);
+            indicators[cur].querySelector('.progress').style.width = (prog * 100) + '%';
+            if (prog < 1) pf = requestAnimationFrame(updateProg);
+        }
+
+        function goTo(idx) {
+            if (trans || idx === cur) return;
+            trans = true;
+            if (to) { clearTimeout(to); to = null; }
+            if (pf) { cancelAnimationFrame(pf); pf = null; }
+
+            slides[cur].classList.remove('active');
+            indicators[cur].classList.remove('active');
+            indicators[cur].querySelector('.progress').style.width = '0%';
+
+            cur = idx;
+            slides[cur].classList.add('active');
+            indicators[cur].classList.add('active');
+
+            playTextAnimation(cur);
+
+            pst = Date.now();
+            pf = requestAnimationFrame(updateProg);
+
+            to = setTimeout(() => {
+                trans = false;
+                goTo((cur + 1) % slides.length);
+            }, TOTAL_DURATION);
+        }
+
+        function start() {
+            playTextAnimation(0);
+            pst = Date.now();
+            pf = requestAnimationFrame(updateProg);
+            to = setTimeout(() => {
+                trans = false;
+                goTo((cur + 1) % slides.length);
+            }, TOTAL_DURATION);
+        }
+
+        indicators.forEach((ind, i) => {
+            ind.addEventListener('click', () => { if (i !== cur && !trans) goTo(i); });
+        });
+
+        document.addEventListener('mousemove', e => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 15;
+            const y = (e.clientY / window.innerHeight - 0.5) * 15;
+            const active = document.querySelector('.slide.active');
+            if (active) {
+                active.querySelector('.text-scene').style.transform = `translate(-50%,-50%) rotateY(${x*0.3}deg) rotateX(${-y*0.3}deg)`;
+                active.querySelector('.bg-layer').style.transform = `scale(1.03) translate(${x*0.3}px,${y*0.3}px)`;
+            }
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.code === 'ArrowRight' && !trans) goTo((cur + 1) % slides.length);
+            else if (e.code === 'ArrowLeft' && !trans) goTo((cur - 1 + slides.length) % slides.length);
+        });
+
+        let tsx = 0;
+        document.addEventListener('touchstart', e => { tsx = e.changedTouches[0].screenX; });
+        document.addEventListener('touchend', e => {
+            const diff = tsx - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50 && !trans) {
+                if (diff > 0) goTo((cur + 1) % slides.length);
+                else goTo((cur - 1 + slides.length) % slides.length);
+            }
+        });
+
+        start();
+    </script>
+</body>
+</html>

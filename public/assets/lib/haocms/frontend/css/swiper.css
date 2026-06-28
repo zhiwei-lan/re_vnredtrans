@@ -1,0 +1,119 @@
+.swiper.full {
+  width: 100%;
+}
+.swiper.full .item {
+    height: 100vh;
+}
+.swiper.full .item .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+.swiper.full .item .background {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    z-index: 0;
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+}
+.swiper.full .item .background video {
+    width: 100%;
+    opacity: 0.2;
+}
+.swiper.full .item .text-area {
+    color: #fff;
+    text-align: center;
+}
+.swiper.full .item .text-area .title {
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: -0.8px;
+    margin-bottom: -15px;
+}
+.swiper.full .item .text-area .subject {
+    font-size: 67px;
+    font-weight: 900;
+}
+.swiper.full .item .text-area .description {
+    font-size: 67px;
+    font-weight: 900;
+}
+.swiper.full .item .text-area .content {
+    font-size: 30px;
+    font-weight: 900;
+}
+:root {
+  --swiper-navigation-color:#fff;
+  --swiper-theme-color:#fff;
+  --swiper-pagination-color:#fff;
+  --swiper-theme-color:#fff;
+
+}
+@-webkit-keyframes fadeInUp {
+    0% {
+        -webkit-transform: translate3d(0,100%,0);
+        opacity: 0;
+        transform: translate3d(0,100%,0)
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        opacity: 1;
+        transform: translateZ(0)
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        -webkit-transform: translate3d(0,100%,0);
+        opacity: 0;
+        transform: translate3d(0,100%,0)
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        opacity: 1;
+        transform: translateZ(0)
+    }
+}
+
+.swiper-slide-active .title {
+	-webkit-animation-duration: 1s; 
+	-webkit-animation-fill-mode: both; 
+	animation-duration: 1s; 
+	animation-fill-mode: both; 
+	-webkit-animation-name: fadeInUp; 
+	animation-name: fadeInUp;
+}
+.swiper-slide-active .subject {
+	-webkit-animation-duration: 1s; 
+	-webkit-animation-fill-mode: both; 
+	animation-delay: 0.2s;
+	animation-duration: 1s; 
+	animation-fill-mode: both; 
+	-webkit-animation-name: fadeInUp; 
+	animation-name: fadeInUp;
+}
+.swiper-slide-active .description {
+	-webkit-animation-duration: 1s; 
+	-webkit-animation-fill-mode: both; 
+	animation-delay: 0.4s;
+	animation-duration: 1s; 
+	animation-fill-mode: both; 
+	-webkit-animation-name: fadeInUp; 
+	animation-name: fadeInUp;
+}
+.swiper-slide-active .content {
+	-webkit-animation-duration: 1s; 
+	-webkit-animation-fill-mode: both; 
+	animation-delay: 0.6s;
+	animation-duration: 1s; 
+	animation-fill-mode: both; 
+	-webkit-animation-name: fadeInUp; 
+	animation-name: fadeInUp;
+}

@@ -1,0 +1,83 @@
+.popupmodal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+} 
+.popupmodal .content {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.popupmodal .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.popupmodal .header .title {
+    flex: 1;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 15px;
+}
+.popupmodal .header button {
+    padding: 8px 15px;
+}
+.popupmodal .footer {
+    text-align: right;
+}
+.popupmodal .footer button {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 8px;
+}
+.popupmodal.center-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.popupmodal.top-center {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.popupmodal.bottom-center {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.popupmodal.center-left {
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+.popupmodal.center-right {
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+.popupmodal.top-left {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+}
+.popupmodal.top-right {
+    top: 0;
+    right: 0;
+    transform: translate(0, 0);
+}
+.popupmodal.bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 0);
+}
+.popupmodal.bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: translate(0, 0);
+}

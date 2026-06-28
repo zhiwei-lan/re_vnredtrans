@@ -1,0 +1,49 @@
+.faq-type1 {}
+
+.faq-type1 .panel-heading {
+	padding: 0;
+	position: relative;
+}
+
+.faq-type1 .panel-heading:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.faq-type1 .panel-heading .number {
+	background: #0D95E8;
+	padding: 5px;
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+	color: #fff;
+	border-radius: 4px;
+	position: absolute;
+	margin: 5px;
+}
+
+.faq-type1 .panel-heading p {
+	padding: 10px;
+	margin: 0;
+	margin-left: 70px;
+	margin-right: 40px;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+}
+
+.faq-type1 .panel-heading i {
+	font-size: 24px;
+	color: #ccc;
+	position: absolute;
+	top: 8px;
+	right: 10px;
+}
+
+.faq-type1 .panel-heading i:before {
+	content: "\f0ab";
+}
+
+.faq-type1 .panel-heading .collapsed i:before {
+	content: "\f0a9";
+}

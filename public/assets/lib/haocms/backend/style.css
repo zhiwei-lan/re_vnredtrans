@@ -1,0 +1,302 @@
+.hidden {
+    display: none!important;
+}
+.hidden-input {
+    border: none;
+    box-shadow: none;
+    max-height: 0!important;
+    max-width: 0!important;
+    padding: 0!important;
+    margin: 0!important;
+    position: relative;
+    z-index: -99999;
+}
+.upload-image-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.upload-image-group .upload-image-btn {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #ccc;
+    z-index: 1;
+    cursor: pointer;
+}
+.upload-image-group .image-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.upload-image-group .image-list li {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    margin-right: 15px;
+}
+.upload-image-group .image-list li .image {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.upload-image-group .image-list li span {
+    color: crimson;
+    font-size: 18px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    cursor: pointer;
+}
+.jstree-default-dark {
+    background-color: #fff;
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s 
+    ease-in-out, box-shadow .15s 
+    ease-in-out;
+}
+.jstree-default-dark .jstree-anchor {
+    text-shadow: none;
+}
+.custom-switch {
+    padding-top: 8px;
+}
+.right-bar {
+    background-color: #fafafa;
+    padding-top: 30px;
+    border-radius: 15px;
+}
+.is-invalid .invalid-feedback {
+    display: block;
+}
+.is-invalid .jstree-default-dark ,.is-invalid .ql-toolbar ,.is-invalid .ql-container {
+    border-color: #dc3545;
+}
+.upload-file-group {
+    display: flex;
+    flex-direction: column;
+}
+.upload-file-group .file-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+.upload-file-group .file-list li {
+    list-style: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.upload-file-group .file-list li .fa-file {
+    padding-right: 5px;
+}
+.upload-file-group .file-list li .fa-times-circle {
+    color: crimson;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    cursor: pointer;
+}
+.upload-file-group .upload-file-btn {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    box-shadow: none;
+    width: 120px;
+    padding: 5px 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+.upload-file-group .upload-file-btn i {
+    padding-right: 5px;
+}
+.upload-image-group.single:has(li) .upload-image-btn {
+    display: none;
+}
+.upload-image-group.sm li ,.upload-image-group.sm .upload-image-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 5px;
+}
+.upload-image-group.lg li ,.upload-image-group.lg .upload-image-btn {
+    width: 400px;
+    height: 400px;
+}
+i.fas.unread {
+    color: #03c75a;
+}
+i.fas.isread {
+    color: #03c75a;
+    opacity: 0.4;
+}
+#domain-list {
+    margin-bottom: 15px;
+}
+#domain-list li .check {
+    padding: 0 32px;
+    background: #eee;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+}
+#domain-list li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location-help {
+    width: 168px;
+    height: 168px;
+    padding: 2px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.location-help div {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    margin: 2px;
+    cursor: pointer;
+}
+.location-help div:after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #333;
+}
+.location-help div.top-center:after {
+    margin-left: 17px;
+}
+.location-help div.top-right:after {
+    margin-left: 34px;
+}
+.location-help div.center-left:after {
+    margin-top: 16px;
+}
+.location-help div.center-center:after {
+    margin-left: 17px;
+    margin-top: 16px;
+}
+.location-help div.center-right:after {
+    margin-left: 34px;
+    margin-top: 16px;
+}
+.location-help div.bottom-left:after {
+    margin-top:33px;
+}
+.location-help div.bottom-center:after {
+    margin-left: 17px;
+    margin-top: 33px;
+}
+.location-help div.bottom-right:after {
+    margin-left: 34px;
+    margin-top: 33px;
+}
+.location-help div:hover ,.location-help div.active {
+    border: 1px solid #03c75a;
+}
+.location-help div:hover:after ,.location-help div.active:after {
+    background-color: #03c75a;
+}
+
+.login-page, .register-page {
+    background: #2a3f50;
+}
+.login-page .login-area .item {
+    margin-bottom: 15px;
+}
+.login-page .login-area .form-check {
+    color: #fff;
+}
+.login-page .login-area .btn {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    outline: 0;
+    margin-top: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    background: #1765a1;
+    border: 1px solid #1765a1;
+}
+.login-page .login-area h2 {
+    text-align: center;
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+
+.slide-manage-write .image-list {
+    flex-direction: column;
+    width: 100%;
+}
+.slide-manage-write .image-list li {
+    margin-bottom: 15px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+}
+.slide-manage-write .image-list li .image {
+    width: 400px;
+    margin-right: 15px;
+}
+.slide-manage-write .upload-image-group {
+    flex-direction: column;
+    align-items: start;
+}
+.slide-manage-write .image-info {
+    width: 100%;
+}

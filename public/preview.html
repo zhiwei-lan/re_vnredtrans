@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>REDTRANS — 베트남 비즈니스 파트너</title>
+  <link href="/assets/fonts/Pretendard-1.3.9/web/static/pretendard.css" rel="stylesheet">
+  <link href="/assets/css/style-v2.css" rel="stylesheet">
+  <script type="importmap">
+  { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+
+<!-- ═════════ HEADER ═════════ -->
+<header class="site-header" id="header">
+  <div class="container">
+    <a href="/" class="header-logo">
+      <img src="/assets/images/vn_logo.png" alt="REDTRANS">
+    </a>
+    <nav class="header-nav" id="mainNav">
+      <a href="#" class="active">회사소개</a>
+      <a href="#">서비스</a>
+      <a href="#">베트남 정보</a>
+      <a href="#">고객센터</a>
+      <a href="#">문의하기</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#" class="btn-login">로그인</a>
+      <a href="#" class="btn-signup">회원가입</a>
+      <button class="header-toggle" id="menuToggle" aria-label="메뉴">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═════════ HERO — 3-Slide Carousel ═════════ -->
+<section class="hero" id="hero">
+  <div class="hero-3d-bg" id="hero3dBg">
+    <canvas id="hero3dCanvas"></canvas>
+    <div class="hero-scene">
+      <div class="hero-slides-container" id="heroSlides">
+
+        <div class="hero-slide active" data-index="0">
+          <div class="hero-overlay"></div>
+          <div class="hero-text-mask"></div>
+          <div class="hero-glow-bottom"></div>
+          <div class="hero-text-scene">
+            <div class="hero-main-title">
+              <span class="hero-line" data-anim-delay="300">고객의 경험</span>
+              <span class="hero-line" data-anim-delay="600">레드트랜스의 이야기</span>
+            </div>
+            <div class="hero-sub-title">
+              <span class="hero-line" data-anim-delay="1000">인터뷰와 실제 사례로 증명된</span>
+              <span class="hero-line" data-anim-delay="1300">베트남 진출의 모든 순간</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-slide" data-index="1">
+          <div class="hero-overlay"></div>
+          <div class="hero-text-mask"></div>
+          <div class="hero-glow-bottom"></div>
+          <div class="hero-text-scene">
+            <div class="hero-main-title">
+              <span class="hero-line" data-anim-delay="300">베트남 법인 설립</span>
+              <span class="hero-line" data-anim-delay="600">새로운 기준을 제시하다</span>
+            </div>
+            <div class="hero-sub-title">
+              <span class="hero-line" data-anim-delay="1000">글로벌 인사이트와</span>
+              <span class="hero-line" data-anim-delay="1300">로컬 네트워크를 아우르는 레드트랜스</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-slide" data-index="2">
+          <div class="hero-overlay"></div>
+          <div class="hero-text-mask"></div>
+          <div class="hero-glow-bottom"></div>
+          <div class="hero-text-scene">
+            <div class="hero-main-title">
+              <span class="hero-line" data-anim-delay="300">복잡한 인허가</span>
+              <span class="hero-line" data-anim-delay="600">레드트랜스로 단순하게</span>
+            </div>
+            <div class="hero-sub-title">
+              <span class="hero-line" data-anim-delay="1000">법인 설립부터 인허가까지,</span>
+              <span class="hero-line" data-anim-delay="1300">원스톱 솔루션을 제공합니다.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-slide-indicators" id="heroIndicators">
+        <div class="hero-indicator active" data-slide="0"><div class="hero-indicator-progress"></div></div>
+        <div class="hero-indicator" data-slide="1"><div class="hero-indicator-progress"></div></div>
+        <div class="hero-indicator" data-slide="2"><div class="hero-indicator-progress"></div></div>
+      </div>
+
+      <div class="hero-loop-indicator">
+        <div class="hero-loop-dot"></div><div class="hero-loop-dot"></div><div class="hero-loop-dot"></div>
+        <span class="hero-loop-text">LOOP</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ TRUST STRIP ═════════ -->
+<section class="trust-strip">
+  <div class="container">
+    <div class="stats">
+      <div class="stat-item reveal">
+        <div class="number"><span class="counter" data-target="15">0</span>+</div>
+        <div class="label">베트남 사업 경력</div>
+      </div>
+      <div class="stat-item reveal d-200">
+        <div class="number"><span class="counter" data-target="1200">0</span>+</div>
+        <div class="label">누적 고객사</div>
+      </div>
+      <div class="stat-item reveal d-400">
+        <div class="number"><span class="counter" data-target="3500">0</span>+</div>
+        <div class="label">완료된 프로젝트</div>
+      </div>
+      <div class="stat-item reveal d-600">
+        <div class="number"><span class="counter" data-target="98">0</span>%</div>
+        <div class="label">고객 만족도</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ PROCESS ═════════ -->
+<section class="process">
+  <div class="container">
+    <div class="process-header reveal">
+      <span class="section-eyebrow">How We Work</span>
+      <h2>복잡한 베트남 행정,<br>이렇게 해결해 드립니다</h2>
+      <p>15년 노하우로 다듬어진 프로세스. 당신은 비즈니스에만 집중하세요.</p>
+    </div>
+    <div class="process-steps" id="processSteps">
+      <div class="process-step reveal reveal-up d-100">
+        <div class="step-num">01</div>
+        <h4>무료 상담</h4>
+        <p>필요한 서비스와 상황을 파악하고 최적의 진출 전략을 제안합니다.</p>
+      </div>
+      <div class="process-step reveal reveal-up d-300">
+        <div class="step-num">02</div>
+        <h4>서류 준비</h4>
+        <p>한국과 베트남 양국 서류를 검토하고 번역·공증을 동시에 진행합니다.</p>
+      </div>
+      <div class="process-step reveal reveal-up d-500">
+        <div class="step-num">03</div>
+        <h4>현지 실행</h4>
+        <p>베트남 현지 법인이 직접 관공서에 접수하고 진행 상황을 실시간 공유합니다.</p>
+      </div>
+      <div class="process-step reveal reveal-up d-600">
+        <div class="step-num">04</div>
+        <h4>사후 관리</h4>
+        <p>완료 후에도 세무·노무·비자 등 지속적인 현지 경영 지원을 제공합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ SERVICES ═════════ -->
+<section class="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="section-eyebrow">Services</span>
+      <h2>베트남 진출, 이 모든 게 필요합니다</h2>
+      <p>현지 법인 설립부터 인허가, 지재권 보호까지 — 베트남 비즈니스의 모든 행정 절차를 원스톱으로.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-up d-100">
+        <div class="icon"><img src="/assets/images/vitenam_07.png" alt=""></div>
+        <h3>베트남<br>회사 설립</h3>
+        <p>법인·투자라이선스·사무소</p>
+        <span class="card-link">자세히 보기 →</span>
+      </div>
+      <div class="service-card reveal reveal-up d-150">
+        <div class="icon"><img src="/assets/images/vitenam_09.png" alt=""></div>
+        <h3>베트남<br>화장품 허가</h3>
+        <p>위생허가·성분심사 대행</p>
+        <span class="card-link">자세히 보기 →</span>
+      </div>
+      <div class="service-card reveal reveal-up d-200">
+        <div class="icon"><img src="/assets/images/vitenam_15.png" alt=""></div>
+        <h3>베트남<br>상표 등록</h3>
+        <p>상표·지재권·위조단속</p>
+        <span class="card-link">자세히 보기 →</span>
+      </div>
+      <div class="service-card reveal reveal-up d-250">
+        <div class="icon"><img src="/assets/images/vitenam_17.png" alt=""></div>
+        <h3>베트남<br>공증·인증</h3>
+        <p>영사확인·아포스티유</p>
+        <span class="card-link">자세히 보기 →</span>
+      </div>
+      <div class="service-card reveal reveal-up d-300">
+        <div class="icon"><img src="/assets/images/vitenam_05.png" alt=""></div>
+        <h3>베트남<br>전문 번역</h3>
+        <p>한-베 전문 번역·공증</p>
+        <span class="card-link">자세히 보기 →</span>
+      </div>
+      <div class="service-card reveal reveal-up d-350">
+        <div class="icon"><img src="/assets/images/vitenam_18.png" alt=""></div>
+        <h3>베트남<br>전문 통역</h3>
+        <p>미팅·공장·관공서 동행</p>
+        <span class="card-link">자세히 보기 →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ CLIENTS — Bold Text Bento ═════════ -->
+<section class="clients">
+  <div class="container">
+    <div class="clients-header reveal">
+      <span class="section-eyebrow">Trusted By</span>
+      <h2>1,200개 이상의 기업이<br>REDTRANS와 함께했습니다</h2>
+      <p>다양한 산업군의 한국 기업들이 베트남 진출을 위해 REDTRANS를 선택했습니다</p>
+    </div>
+
+    <div class="clients-bento">
+      <div class="client-bento-card card-hero reveal reveal-up d-100">
+        <div class="cbc-badge">BEST</div>
+        <div class="cbc-num"><span class="counter" data-target="350">0</span>+</div>
+        <div class="cbc-label">화장품 · 뷰티</div>
+        <div class="cbc-desc">베트남 식약처 위생허가 취득 완료</div>
+      </div>
+
+      <div class="client-bento-card card-dark reveal reveal-up d-150">
+        <div class="cbc-num"><span class="counter" data-target="200">0</span>+</div>
+        <div class="cbc-label">전자 · IT</div>
+        <div class="cbc-desc">현지 법인 설립 및 투자 라이선스</div>
+      </div>
+
+      <div class="client-bento-card card-light reveal reveal-up d-200">
+        <div class="cbc-num"><span class="counter" data-target="180">0</span>+</div>
+        <div class="cbc-label">식품 · 유통</div>
+        <div class="cbc-desc">수입 허가 및 현지 파트너 계약</div>
+      </div>
+
+      <div class="client-bento-card card-accent reveal reveal-up d-250">
+        <div class="cbc-num"><span class="counter" data-target="150">0</span>+</div>
+        <div class="cbc-label">의류 · 패션</div>
+        <div class="cbc-desc">상표 등록 및 위조 단속 대행</div>
+      </div>
+
+      <div class="client-bento-card card-dark reveal reveal-up d-300">
+        <div class="cbc-num"><span class="counter" data-target="120">0</span>+</div>
+        <div class="cbc-label">제약 · 바이오</div>
+        <div class="cbc-desc">임상시험 인허가 컨설팅</div>
+      </div>
+
+      <div class="client-bento-card card-light reveal reveal-up d-350">
+        <div class="cbc-num"><span class="counter" data-target="90">0</span>+</div>
+        <div class="cbc-label">기계 · 설비</div>
+        <div class="cbc-desc">현지 공장 설립 및 환경 인허가</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ REVIEWS ═════════ -->
+<section class="reviews">
+  <div class="container">
+    <div class="reviews-header reveal">
+      <div>
+        <span class="section-eyebrow">Reviews</span>
+        <h2>베스트 리뷰러들만 모았다!<br>고객 인터뷰</h2>
+      </div>
+      <div class="reviews-nav">
+        <button aria-label="이전 리뷰">←</button>
+        <button aria-label="다음 리뷰">→</button>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal reveal-right d-100">
+        <div class="reviewer">
+          <div class="avatar"><div class="av-placeholder" style="background:oklch(0.40 0.21 24 / 0.12);">김</div></div>
+          <div class="reviewer-info">
+            <div class="name">김미영 대표</div>
+            <div class="role">화장품 브랜드 · 서울</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <blockquote>"베트남 화장품 위생허가가 이렇게 빠를 수 있다니 놀랐습니다. 예정보다 2개월 앞당겨 론칭했어요."</blockquote>
+        <a href="#" class="read-more">자세히 보기 →</a>
+      </div>
+      <div class="review-card reveal reveal-right d-300">
+        <div class="reviewer">
+          <div class="avatar"><div class="av-placeholder" style="background:oklch(0.58 0.16 77 / 0.18);">박</div></div>
+          <div class="reviewer-info">
+            <div class="name">박상민 이사</div>
+            <div class="role">전자제품 제조 · 대구</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <blockquote>"베트남 법인 설립 과정이 복잡할 줄 알았는데, 레드트랜스가 모든 걸 처리해줘서 정말 편했습니다."</blockquote>
+        <a href="#" class="read-more">자세히 보기 →</a>
+      </div>
+      <div class="review-card reveal reveal-right d-500">
+        <div class="reviewer">
+          <div class="avatar"><div class="av-placeholder" style="background:oklch(0.40 0.21 24 / 0.10);">이</div></div>
+          <div class="reviewer-info">
+            <div class="name">이정은 팀장</div>
+            <div class="role">식품 유통 · 부산</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <blockquote>"상표 등록부터 유통 계약까지, 현지 사정에 밝은 전문가가 옆에서 도와주니 사업이 훨씬 수월해졌어요."</blockquote>
+        <a href="#" class="read-more">자세히 보기 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ PARTNERS — Large Showcase ═════════ -->
+<section class="partners">
+  <div class="container">
+    <div class="partners-header reveal">
+      <span class="section-eyebrow">Partners</span>
+      <h2>REDTRANS와 함께한 고객사</h2>
+    </div>
+
+    <!-- Partner left-right: 3D carousel left + info right -->
+    <div class="partner-layout reveal reveal-up d-100" id="partnerLayout">
+      <div class="partner-layout-left">
+        <div class="partner-3d-stage" id="partner3dStage">
+          <div class="partner-3d-ring" id="partner3dRing">
+            <!-- JS populated -->
+          </div>
+          <div class="partner-3d-floor" id="partner3dFloor"></div>
+        </div>
+      </div>
+      <div class="partner-layout-right">
+        <div class="partner-info-panel" id="partnerInfoPanel">
+          <div class="partner-info-badge">주요 고객사</div>
+          <h3 class="partner-info-name" id="partnerInfoName"></h3>
+          <p class="partner-info-desc" id="partnerInfoDesc"></p>
+          <div class="partner-info-tags" id="partnerInfoTags"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Downloads -->
+    <div class="partner-downloads reveal reveal-up d-400">
+      <div class="download-card">
+        <div class="dl-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <div><h4>회사 소개서</h4><p>서비스 및 실적 안내</p></div>
+      </div>
+      <div class="download-card">
+        <div class="dl-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            <line x1="8" y1="7" x2="16" y2="7"/>
+            <line x1="8" y1="11" x2="16" y2="11"/>
+            <line x1="8" y1="15" x2="12" y2="15"/>
+          </svg>
+        </div>
+        <div><h4>서비스 브로슈어</h4><p>베트남 진출 가이드 및 요금</p></div>
+      </div>
+      <div class="download-card">
+        <div class="dl-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            <line x1="16" y1="16" x2="9" y2="16"/>
+            <line x1="13" y1="12" x2="9" y2="12"/>
+          </svg>
+        </div>
+        <div><h4>진출 체크리스트</h4><p>업종별 필요 서류 및 절차</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ CTA ═════════ -->
+<section class="cta-full">
+  <div class="container reveal reveal-scale">
+    <h2>베트남 진출, 지금 시작하세요</h2>
+    <p>복잡한 행정 절차는 저희에게 맡기고, 당신은 비즈니스에만 집중하세요. 첫 상담은 무료입니다.</p>
+    <a href="#" class="btn-light">무료 상담 신청하기 <span>→</span></a>
+  </div>
+</section>
+
+<!-- ═════════ FOOTER ═════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/assets/images/vn_logo.png" alt="REDTRANS" class="ft-logo">
+        <div><button class="family-site-btn">FAMILY SITE ▾</button></div>
+      </div>
+      <div class="footer-info">
+        <div>
+          <h4>Company</h4>
+          <p>상호: REDTRANS</p><p>대표이사: 김영수</p>
+          <p>사업자등록번호: 123-45-67890</p>
+          <p>주소: 서울특별시 강남구 테헤란로 123</p>
+          <p>E-mail: info@redtrans.co.kr</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <div class="fc-item"><div class="fc-label">서울본사</div><div class="fc-num">02-1234-5678</div></div>
+          <div class="fc-item"><div class="fc-label">대구지사</div><div class="fc-num">053-123-4567</div></div>
+          <div class="fc-item"><div class="fc-label">베트남 법인</div><div class="fc-num">+84-28-1234-5678</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">Copyright &copy; 2025 Redtrans. All rights reserved.</div>
+      <div class="legal">
+        <a href="#">이용약관</a><a href="#">개인정보처리방침</a><a href="#">이메일무단수집거부</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═════════ QUICK MENU ═════════ -->
+<div class="quickmenu">
+  <div class="qm-chat">💬<span class="tooltip">무엇을 찾으시나요?</span></div>
+  <div class="qm-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+</div>
+
+<!-- ═════════ SCRIPTS ═════════ -->
+
+<!-- Hero CSS 3D animation scripts -->
+<script>
+(function() {
+  var hero = document.getElementById('hero');
+  if (!hero) return;
+
+  var ANIM_DURATION = 2100;
+  var DISPLAY_DURATION = 4000;
+  var TOTAL_DURATION = ANIM_DURATION + DISPLAY_DURATION;
+
+  var slides = hero.querySelectorAll('.hero-slide');
+  var indicators = hero.querySelectorAll('.hero-indicator');
+  var cur = 0, trans = false;
+  var timer = null, progRaf = null, progStart = 0;
+
+  function updateProgress() {
+    var elapsed = Date.now() - progStart;
+    var prog = Math.min(elapsed / TOTAL_DURATION, 1);
+    indicators[cur].querySelector('.hero-indicator-progress').style.width = (prog * 100) + '%';
+    if (prog < 1) progRaf = requestAnimationFrame(updateProgress);
+  }
+
+  function playTextAnimation(slide) {
+    var lines = slide.querySelectorAll('.hero-line');
+    lines.forEach(function(line) {
+      line.classList.remove('anim-fade-in');
+      line.style.transitionDelay = (parseInt(line.getAttribute('data-anim-delay')) || 0) + 'ms';
+    });
+    requestAnimationFrame(function() {
+      lines.forEach(function(line) {
+        line.classList.add('anim-fade-in');
+      });
+    });
+  }
+
+  function goTo(idx) {
+    if (trans || idx === cur) return;
+    trans = true;
+    if (timer) { clearTimeout(timer); timer = null; }
+    if (progRaf) { cancelAnimationFrame(progRaf); progRaf = null; }
+
+    slides[cur].classList.remove('active');
+    indicators[cur].classList.remove('active');
+    indicators[cur].querySelector('.hero-indicator-progress').style.width = '0%';
+
+    cur = idx;
+    slides[cur].classList.add('active');
+    indicators[cur].classList.add('active');
+
+    playTextAnimation(slides[cur]);
+    if (window._hero3dSetTheme) window._hero3dSetTheme(idx);
+
+    progStart = Date.now();
+    progRaf = requestAnimationFrame(updateProgress);
+
+    timer = setTimeout(function() {
+      trans = false;
+      goTo((cur + 1) % slides.length);
+    }, TOTAL_DURATION);
+  }
+
+  function start() {
+    playTextAnimation(slides[0]);
+    progStart = Date.now();
+    progRaf = requestAnimationFrame(updateProgress);
+    timer = setTimeout(function() {
+      trans = false;
+      goTo((cur + 1) % slides.length);
+    }, TOTAL_DURATION);
+  }
+
+  indicators.forEach(function(ind, i) {
+    ind.addEventListener('click', function() {
+      if (i !== cur && !trans) goTo(i);
+    });
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.code === 'ArrowRight' && !trans) goTo((cur + 1) % slides.length);
+    else if (e.code === 'ArrowLeft' && !trans) goTo((cur - 1 + slides.length) % slides.length);
+  });
+
+  var touchStartX = 0;
+  document.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; });
+  document.addEventListener('touchend', function(e) {
+    var diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50 && !trans) {
+      if (diff > 0) goTo((cur + 1) % slides.length);
+      else goTo((cur - 1 + slides.length) % slides.length);
+    }
+  });
+
+  start();
+
+  // Expose theme setter for Three.js scene
+  window._hero3dSetTheme = function(idx) {
+    var canvas = document.getElementById('hero3dCanvas');
+    if (canvas && canvas._setTheme) canvas._setTheme(idx);
+  };
+})();
+</script>
+
+<!-- ═════════ Three.js 3D Hero Background ═════════ -->
+<script type="module">
+import * as THREE from 'three';
+
+(function() {
+  var hero = document.getElementById('hero');
+  var canvas = document.getElementById('hero3dCanvas');
+  if (!hero || !canvas) return;
+
+  // ── Scene setup ──
+  var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setClearColor(0x000000, 0);
+
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(55, 2, 0.1, 30);
+  camera.position.set(0, 0.3, 7);
+  camera.lookAt(0, 0, 0);
+
+  var viewportScale = 1;
+
+  // ── Per-slide themes ──
+  var themes = [
+    { primary: new THREE.Color('#d42a3b'), secondary: new THREE.Color('#ff5a3a'), accent: new THREE.Color('#ff9a6c') },
+    { primary: new THREE.Color('#d42a3b'), secondary: new THREE.Color('#e8614a'), accent: new THREE.Color('#f09578') },
+    { primary: new THREE.Color('#d42a3b'), secondary: new THREE.Color('#c23040'), accent: new THREE.Color('#e57080') }
+  ];
+
+  var curPrimary   = themes[0].primary.clone();
+  var curSecondary = themes[0].secondary.clone();
+  var curAccent    = themes[0].accent.clone();
+  var lerpT = 1;
+  var fromPri, toPri, fromSec, toSec, fromAcc, toAcc;
+
+  // ── Scene-config definitions (8 shapes each, unique per slide) ──
+  var sceneShapeDefs = [
+    // Scene 0 — Red: original arrangement
+    [
+      { geo: new THREE.IcosahedronGeometry(0.45, 0),       pos: [-5.5, 3.0, -2.5],  rot: [0.4, 0.3, 0],     speed: 0.25 },
+      { geo: new THREE.TetrahedronGeometry(0.4, 0),        pos: [5.5, 3.5, -3],     rot: [0.3, -0.5, 0.2],  speed: 0.27 },
+      { geo: new THREE.DodecahedronGeometry(0.32, 0),      pos: [-2.5, 5.0, -4],    rot: [-0.2, 0.6, -0.3], speed: 0.23 },
+      { geo: new THREE.TorusGeometry(0.4, 0.06, 16, 40),   pos: [6.0, -0.5, -3.5],  rot: [-0.5, 0.7, 0],    speed: 0.2  },
+      { geo: new THREE.OctahedronGeometry(0.38, 0),        pos: [-6.0, -0.5, -3],   rot: [0.6, -0.4, 0],    speed: 0.3  },
+      { geo: new THREE.ConeGeometry(0.32, 0.75, 8, 1),     pos: [-5.0, -2.0, -2],   rot: [-0.3, 0.5, 0],    speed: 0.22 },
+      { geo: new THREE.BoxGeometry(0.45, 0.45, 0.45),      pos: [5.0, -1.8, -2.5],  rot: [0.5, 0.5, 0.5],   speed: 0.21 },
+      { geo: new THREE.CylinderGeometry(0.26, 0.26, 0.7, 8), pos: [0, -3.0, -3.8],  rot: [0.8, 0.2, 0],     speed: 0.19 }
+    ],
+    // Scene 1 — Gold: network/constellation with new geometry types
+    [
+      { geo: new THREE.TorusKnotGeometry(0.32, 0.07, 80, 12), pos: [3.5, 3.8, -3.5],  rot: [0.2, -0.3, 0.1],  speed: 0.2  },
+      { geo: new THREE.SphereGeometry(0.38, 6, 4),            pos: [-3.5, 4.2, -3.0],  rot: [0.5, 0.3, -0.2],  speed: 0.22 },
+      { geo: new THREE.SphereGeometry(0.28, 8, 4),            pos: [-5.5, 1.0, -3.3],  rot: [-0.3, 0.5, 0],    speed: 0.28 },
+      { geo: new THREE.CapsuleGeometry(0.22, 0.5, 4, 8),      pos: [6.2, -1.5, -3.2],  rot: [0.4, -0.6, 0.3],  speed: 0.24 },
+      { geo: new THREE.TetrahedronGeometry(0.44, 0),          pos: [-2.5, 3.2, -3.8],  rot: [0.7, 0.2, -0.4],  speed: 0.26 },
+      { geo: new THREE.OctahedronGeometry(0.36, 0),           pos: [3.0, -2.5, -3.5],  rot: [-0.1, 0.7, -0.3], speed: 0.23 },
+      { geo: new THREE.ConeGeometry(0.28, 0.7, 6, 1),         pos: [5.5, 1.8, -3.0],   rot: [-0.4, 0.2, 0.5],  speed: 0.21 },
+      { geo: new THREE.CylinderGeometry(0.22, 0.22, 0.65, 6), pos: [-5.0, -2.5, -2.8], rot: [0.3, -0.4, -0.2], speed: 0.19 }
+    ],
+    // Scene 2 — Blue: crystal/gem scatter
+    [
+      { geo: new THREE.IcosahedronGeometry(0.42, 0),       pos: [0, 3.2, -3.8],    rot: [0.3, 0.2, 0],     speed: 0.26 },
+      { geo: new THREE.DodecahedronGeometry(0.36, 0),      pos: [4.5, -2.0, -3.3],  rot: [0.5, -0.3, -0.2], speed: 0.24 },
+      { geo: new THREE.TorusGeometry(0.38, 0.05, 8, 30),   pos: [-5.0, 2.5, -3.2],  rot: [-0.4, 0.5, 0.3],  speed: 0.22 },
+      { geo: new THREE.BoxGeometry(0.5, 0.5, 0.5),         pos: [5.5, 2.5, -3.8],   rot: [0.4, 0.4, 0.4],   speed: 0.28 },
+      { geo: new THREE.ConeGeometry(0.28, 0.75, 10, 1),    pos: [-4.5, -2.8, -3.0], rot: [0.6, -0.2, 0],    speed: 0.2  },
+      { geo: new THREE.SphereGeometry(0.32, 8, 4),         pos: [5.0, 3.8, -4.0],   rot: [-0.2, 0.6, -0.3], speed: 0.23 },
+      { geo: new THREE.CylinderGeometry(0.24, 0.24, 0.7, 10), pos: [-5.5, -0.5, -3.5], rot: [0.2, 0.3, -0.5], speed: 0.21 },
+      { geo: new THREE.IcosahedronGeometry(0.26, 0),       pos: [0.5, -3.2, -3.8],  rot: [0.7, -0.1, 0.4],  speed: 0.3  }
+    ]
+  ];
+
+  // ── Per-scene particle configs ──
+  var particleDefs = [
+    // Scene 0 — vertical rise + gentle horizontal drift
+    { count1: 220, size1: 0.06,  op1: 0.65, velX1: 0.25, velY1: [0.5, 0.15], velZ1: 0.12, xSpread1: 14, yBase1: -4, yTop1: 5, zSpread1: 6, zBase1: -2,
+      count2: 150, size2: 0.035, op2: 0.5,  velX2: 0.2,  velY2: [0.4, 0.12], velZ2: 0.1,  xSpread2: 12, yBase2: -4, yTop2: 5, zSpread2: 5, zBase2: -1,
+      drift: 'vertical' },
+    // Scene 1 — stronger horizontal swirl
+    { count1: 180, size1: 0.055, op1: 0.6,  velX1: 0.35, velY1: [0.4, 0.10], velZ1: 0.18, xSpread1: 12, yBase1: -3.5, yTop1: 5, zSpread1: 5, zBase1: -2,
+      count2: 120, size2: 0.04,  op2: 0.55, velX2: 0.3,  velY2: [0.35, 0.1], velZ2: 0.15, xSpread2: 11, yBase2: -3.5, yTop2: 4.5, zSpread2: 4, zBase2: -1,
+      drift: 'horizontal' },
+    // Scene 2 — diagonal wave drift
+    { count1: 200, size1: 0.05,  op1: 0.55, velX1: 0.22, velY1: [0.45, 0.12], velZ1: 0.2,  xSpread1: 13, yBase1: -3.5, yTop1: 5, zSpread1: 5, zBase1: -2,
+      count2: 180, size2: 0.032, op2: 0.45, velX2: 0.18, velY2: [0.38, 0.1],  velZ2: 0.18, xSpread2: 10, yBase2: -3.5, yTop2: 4.5, zSpread2: 4, zBase2: -1,
+      drift: 'diagonal' }
+  ];
+
+  // ── Per-scene ambient ring configs ──
+  var ambientDefs = [
+    // Scene 0 — single large ring
+    [ { r1: 2.2, r2: 2.5, z: -4, tiltX: -Math.PI * 0.5, rotSpeed: 0.12, opBase: 0.06, opAmp: 0.03 } ],
+    // Scene 1 — triple concentric rings
+    [
+      { r1: 1.6, r2: 1.78, z: -3.5, tiltX: -Math.PI * 0.48, rotSpeed: 0.18, opBase: 0.05, opAmp: 0.025 },
+      { r1: 2.0, r2: 2.2,  z: -3.8, tiltX: -Math.PI * 0.52, rotSpeed: 0.10, opBase: 0.06, opAmp: 0.03 },
+      { r1: 2.6, r2: 2.82, z: -4.2, tiltX: -Math.PI * 0.47, rotSpeed: 0.14, opBase: 0.04, opAmp: 0.02 }
+    ],
+    // Scene 2 — two crossing rings (atom-like)
+    [
+      { r1: 2.0, r2: 2.3, z: -4, tiltX: -Math.PI * 0.5,  rotSpeed: 0.15, opBase: 0.07, opAmp: 0.03, rotAxis: 'z' },
+      { r1: 1.8, r2: 2.1, z: -3.8, tiltX: -Math.PI * 0.15, rotSpeed: 0.13, opBase: 0.05, opAmp: 0.025, rotAxis: 'x' }
+    ]
+  ];
+
+  // ── Mutable references rebuilt on slide change ──
+  var currentSceneIdx = -1;
+  var pGeo1, pPos1, pVel1, pCount1, pMat1, points1;
+  var pGeo2, pPos2, pVel2, pCount2, pMat2, points2;
+  var shapes = [];
+  var ringObjects = [];
+  var driftType = 'vertical';
+
+  // ── Hero slide text content ──
+  var slideTexts = [
+    { main: ['고객의 경험', '레드트랜스의 이야기'], sub: ['인터뷰와 실제 사례로 증명된', '베트남 진출의 모든 순간'] },
+    { main: ['베트남 법인 설립', '새로운 기준을 제시하다'], sub: ['글로벌 인사이트와', '로컬 네트워크를 아우르는 레드트랜스'] },
+    { main: ['복잡한 인허가', '레드트랜스로 단순하게'], sub: ['법인 설립부터 인허가까지,', '원스톱 솔루션을 제공합니다.'] }
+  ];
+  var heroTextPlanes = [];
+  var textEntranceTime = 0;
+
+  function createHeroTextTexture(text, fontSize, weight) {
+    var cw = 1024, ch = 200;
+    var c = document.createElement('canvas');
+    c.width = cw; c.height = ch;
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.font = weight + ' ' + fontSize + 'px "Pretendard", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.shadowColor = 'rgba(255,255,255,0.35)';
+    ctx.shadowBlur = 3;
+    ctx.fillText(text, cw / 2, ch / 2);
+    return new THREE.CanvasTexture(c);
+  }
+
+  function buildHeroText(idx) {
+    var txt = slideTexts[idx];
+    // Main title line 1 — scale-up entrance
+    var texM1 = createHeroTextTexture(txt.main[0], 68, '700');
+    var matM1 = new THREE.MeshBasicMaterial({ map: texM1, color: curPrimary, transparent: true, opacity: 0, depthWrite: false, side: THREE.DoubleSide });
+    var planeM1 = new THREE.Mesh(new THREE.PlaneGeometry(6.8, 1.28), matM1);
+    planeM1.position.set(0, 0.95, 0.6);
+    planeM1.userData = { targetY: 0.95, targetOpacity: 1.0, delay: 0.3, animType: 'scaleUp' };
+    scene.add(planeM1);
+    heroTextPlanes.push({ mesh: planeM1, mat: matM1, texture: texM1, baseY: 0.95, baseZ: 0.6 });
+
+    // Main title line 2 — slide from right
+    var texM2 = createHeroTextTexture(txt.main[1], 68, '700');
+    var matM2 = new THREE.MeshBasicMaterial({ map: texM2, color: curPrimary, transparent: true, opacity: 0, depthWrite: false, side: THREE.DoubleSide });
+    var planeM2 = new THREE.Mesh(new THREE.PlaneGeometry(6.8, 1.28), matM2);
+    planeM2.position.set(0, 0.4, 0.6);
+    planeM2.userData = { targetY: 0.4, targetOpacity: 1.0, delay: 0.6, animType: 'slideRight' };
+    scene.add(planeM2);
+    heroTextPlanes.push({ mesh: planeM2, mat: matM2, texture: texM2, baseY: 0.4, baseZ: 0.6 });
+
+    // Sub title line 1 — depth sweep (white)
+    var texS1 = createHeroTextTexture(txt.sub[0], 30, '500');
+    var matS1 = new THREE.MeshBasicMaterial({ map: texS1, color: 0xffffff, transparent: true, opacity: 0, depthWrite: false, side: THREE.DoubleSide });
+    var planeS1 = new THREE.Mesh(new THREE.PlaneGeometry(6.8, 1.26), matS1);
+    planeS1.position.set(0, -0.35, 0.5);
+    planeS1.userData = { targetY: -0.35, targetOpacity: 0.9, delay: 1.0, animType: 'depthIn', isSub: true };
+    scene.add(planeS1);
+    heroTextPlanes.push({ mesh: planeS1, mat: matS1, texture: texS1, baseY: -0.35, baseZ: 0.5 });
+
+    // Sub title line 2 — slide from left (white)
+    var texS2 = createHeroTextTexture(txt.sub[1], 30, '500');
+    var matS2 = new THREE.MeshBasicMaterial({ map: texS2, color: 0xffffff, transparent: true, opacity: 0, depthWrite: false, side: THREE.DoubleSide });
+    var planeS2 = new THREE.Mesh(new THREE.PlaneGeometry(6.8, 1.26), matS2);
+    planeS2.position.set(0, -0.8, 0.5);
+    planeS2.userData = { targetY: -0.8, targetOpacity: 0.9, delay: 1.3, animType: 'slideLeft', isSub: true };
+    scene.add(planeS2);
+    heroTextPlanes.push({ mesh: planeS2, mat: matS2, texture: texS2, baseY: -0.8, baseZ: 0.5 });
+
+    textEntranceTime = 0;
+  }
+
+  function destroySceneObjects() {
+    if (points1) { scene.remove(points1); pGeo1.dispose(); pMat1.dispose(); }
+    if (points2) { scene.remove(points2); pGeo2.dispose(); pMat2.dispose(); }
+    shapes.forEach(function(s) { scene.remove(s.mesh); s.mesh.geometry.dispose(); s.mat.dispose(); });
+    ringObjects.forEach(function(r) { scene.remove(r.mesh); r.mesh.geometry.dispose(); r.mat.dispose(); });
+    heroTextPlanes.forEach(function(h) { scene.remove(h.mesh); h.mesh.geometry.dispose(); h.mat.dispose(); h.texture.dispose(); });
+    shapes = [];
+    ringObjects = [];
+    heroTextPlanes = [];
+    points1 = points2 = null;
+  }
+
+  function buildParticles(def) {
+    // System 1
+    pCount1 = def.count1;
+    pGeo1 = new THREE.BufferGeometry();
+    pPos1 = new Float32Array(pCount1 * 3);
+    pVel1 = new Float32Array(pCount1 * 3);
+    for (var i = 0; i < pCount1; i++) {
+      pPos1[i*3]   = (Math.random() - 0.5) * def.xSpread1;
+      pPos1[i*3+1] = Math.random() * (def.yTop1 - def.yBase1) + def.yBase1;
+      pPos1[i*3+2] = (Math.random() - 0.5) * def.zSpread1 + def.zBase1;
+      pVel1[i*3]   = (Math.random() - 0.5) * def.velX1;
+      pVel1[i*3+1] = Math.random() * def.velY1[0] + def.velY1[1];
+      pVel1[i*3+2] = (Math.random() - 0.5) * def.velZ1;
+    }
+    pGeo1.setAttribute('position', new THREE.BufferAttribute(pPos1, 3));
+    pMat1 = new THREE.PointsMaterial({
+      color: curPrimary, size: def.size1,
+      blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: def.op1
+    });
+    points1 = new THREE.Points(pGeo1, pMat1);
+    scene.add(points1);
+
+    // System 2
+    pCount2 = def.count2;
+    pGeo2 = new THREE.BufferGeometry();
+    pPos2 = new Float32Array(pCount2 * 3);
+    pVel2 = new Float32Array(pCount2 * 3);
+    for (var j = 0; j < pCount2; j++) {
+      pPos2[j*3]   = (Math.random() - 0.5) * def.xSpread2;
+      pPos2[j*3+1] = Math.random() * (def.yTop2 - def.yBase2) + def.yBase2;
+      pPos2[j*3+2] = (Math.random() - 0.5) * def.zSpread2 + def.zBase2;
+      pVel2[j*3]   = (Math.random() - 0.5) * def.velX2;
+      pVel2[j*3+1] = Math.random() * def.velY2[0] + def.velY2[1];
+      pVel2[j*3+2] = (Math.random() - 0.5) * def.velZ2;
+    }
+    pGeo2.setAttribute('position', new THREE.BufferAttribute(pPos2, 3));
+    pMat2 = new THREE.PointsMaterial({
+      color: curSecondary, size: def.size2,
+      blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: def.op2
+    });
+    points2 = new THREE.Points(pGeo2, pMat2);
+    scene.add(points2);
+
+    driftType = def.drift;
+  }
+
+  function buildShapes(defs) {
+    defs.forEach(function(def) {
+      var mat = new THREE.MeshBasicMaterial({
+        color: curPrimary, wireframe: true, transparent: true, opacity: 0.3
+      });
+      var mesh = new THREE.Mesh(def.geo, mat);
+      mesh.position.set(def.pos[0], def.pos[1], def.pos[2]);
+      mesh.rotation.set(def.rot[0], def.rot[1], def.rot[2]);
+      scene.add(mesh);
+      shapes.push({
+        mesh: mesh, mat: mat,
+        baseX: def.pos[0], baseY: def.pos[1], baseZ: def.pos[2],
+        rotSpeed: def.speed,
+        orbitSpeed: 0.08 + Math.random() * 0.12,
+        orbitAmp: 0.3 + Math.random() * 0.6
+      });
+    });
+  }
+
+  function buildRings(defs) {
+    defs.forEach(function(def) {
+      var geo = new THREE.RingGeometry(def.r1, def.r2, 64);
+      var mat = new THREE.MeshBasicMaterial({
+        color: curPrimary, side: THREE.DoubleSide,
+        transparent: true, opacity: def.opBase, depthWrite: false
+      });
+      var mesh = new THREE.Mesh(geo, mat);
+      mesh.rotation.x = def.tiltX;
+      mesh.position.z = def.z;
+      scene.add(mesh);
+      ringObjects.push({
+        mesh: mesh, mat: mat,
+        rotSpeed: def.rotSpeed,
+        opBase: def.opBase, opAmp: def.opAmp,
+        rotAxis: def.rotAxis || 'z'
+      });
+    });
+  }
+
+  function buildScene(idx) {
+    destroySceneObjects();
+    var pDef = particleDefs[idx];
+    buildParticles(pDef);
+    buildShapes(sceneShapeDefs[idx]);
+    buildRings(ambientDefs[idx]);
+    buildHeroText(idx);
+    currentSceneIdx = idx;
+  }
+
+  // ── Theme switch (called by carousel) ──
+  function setTheme(idx) {
+    if (idx !== currentSceneIdx) buildScene(idx);
+    fromPri = curPrimary.clone();   toPri = themes[idx].primary.clone();
+    fromSec = curSecondary.clone(); toSec = themes[idx].secondary.clone();
+    fromAcc = curAccent.clone();    toAcc = themes[idx].accent.clone();
+    lerpT = 0;
+  }
+  canvas._setTheme = setTheme;
+
+  // ── Korean text planes (shared across all scenes) ──
+  var textPlanes = [];
+  var koreanTexts = ['베트남 회사 설립', '베트남 화장품 허가', '베트남 상표 등록', '베트남 공증·인증', '베트남 전문 번역', '베트남 전문 통역'];
+
+  function createTextTexture(text) {
+    var size = 256;
+    var c = document.createElement('canvas');
+    c.width = size; c.height = size / 2;
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '700 ' + (size * 0.2) + 'px "Pretendard", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(text, size / 2, size / 4);
+    return new THREE.CanvasTexture(c);
+  }
+
+  var textPositions = [
+    { pos: [0, 3.8, -3.2],   rotY: 0 },
+    { pos: [5.5, 1.8, -3.5], rotY: -0.6 },
+    { pos: [5.2, -1.3, -3],  rotY: 0.5 },
+    { pos: [2.0, -2.6, -3.6], rotY: 0.3 },
+    { pos: [-2.0, -2.8, -3.2], rotY: -0.4 },
+    { pos: [-5.2, -0.8, -3.2], rotY: 0.7 }
+  ];
+
+  koreanTexts.forEach(function(txt, idx) {
+    var tex = createTextTexture(txt);
+    var mat = new THREE.MeshBasicMaterial({
+      map: tex, color: curAccent, transparent: true, opacity: 0.18,
+      depthWrite: false, side: THREE.DoubleSide
+    });
+    var plane = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 0.8), mat);
+    var tp = textPositions[idx];
+    plane.position.set(tp.pos[0], tp.pos[1], tp.pos[2]);
+    plane.rotation.set(0, tp.rotY, 0);
+    scene.add(plane);
+    textPlanes.push({
+      mesh: plane, mat: mat, texture: tex, text: txt,
+      baseX: tp.pos[0], baseY: tp.pos[1], baseZ: tp.pos[2],
+      baseRotY: tp.rotY,
+      floatSpeed: 0.3 + Math.random() * 0.5,
+      floatAmp: 0.2 + Math.random() * 0.4,
+      rotDrift: (Math.random() - 0.5) * 0.15
+    });
+  });
+
+  // ── Resize ──
+  function resize() {
+    var rect = hero.getBoundingClientRect();
+    var w = rect.width, h = rect.height;
+    if (w === 0 || h === 0) return;
+    if (canvas.width !== w || canvas.height !== h) {
+      renderer.setSize(w, h, false);
+      camera.aspect = w / Math.max(h, 1);
+      camera.updateProjectionMatrix();
+    }
+    viewportScale = Math.min(Math.max(w / 1200, 0.5), 1.0);
+  }
+
+  // ── Easing ──
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  // ── Animation loop ──
+  var clock = new THREE.Clock();
+  function animate() {
+    requestAnimationFrame(animate);
+    var dt = Math.min(clock.getDelta(), 0.1);
+    var t = performance.now() * 0.001;
+
+    resize();
+
+    // Color lerp
+    if (lerpT < 1) {
+      lerpT = Math.min(lerpT + dt * 0.55, 1);
+      var et = easeInOutCubic(lerpT);
+      curPrimary.copy(fromPri).lerp(toPri, et);
+      curSecondary.copy(fromSec).lerp(toSec, et);
+      curAccent.copy(fromAcc).lerp(toAcc, et);
+      if (pMat1) pMat1.color.copy(curPrimary);
+      if (pMat2) pMat2.color.copy(curSecondary);
+      shapes.forEach(function(s) { s.mat.color.copy(curPrimary); });
+      ringObjects.forEach(function(r) { r.mat.color.copy(curPrimary); });
+      heroTextPlanes.forEach(function(h) { if (!h.mesh.userData.isSub) h.mat.color.copy(curPrimary); });
+      textPlanes.forEach(function(tp) { tp.mat.color.copy(curAccent); });
+    }
+
+    // Animate particles — behavior varies by driftType
+    if (points1) {
+      for (var i = 0; i < pCount1; i++) {
+        var hDrift1 = 0;
+        if (driftType === 'vertical')   hDrift1 = Math.sin(t * 0.7 + i) * 0.12 * dt;
+        if (driftType === 'horizontal') hDrift1 = Math.sin(t * 0.9 + i * 0.7) * 0.25 * dt;
+        if (driftType === 'diagonal')   hDrift1 = Math.cos(t * 0.6 + i * 0.5) * 0.22 * dt;
+        pPos1[i*3+1] += pVel1[i*3+1] * dt;
+        pPos1[i*3]   += pVel1[i*3] * dt + hDrift1;
+        pPos1[i*3+2] += pVel1[i*3+2] * dt;
+        if (pPos1[i*3+1] > 5) { pPos1[i*3+1] = -5; pPos1[i*3] = (Math.random() - 0.5) * (driftType === 'horizontal' ? 12 : 14); }
+      }
+      pGeo1.attributes.position.needsUpdate = true;
+    }
+
+    if (points2) {
+      for (var j = 0; j < pCount2; j++) {
+        var hDrift2 = 0;
+        if (driftType === 'vertical')   hDrift2 = Math.cos(t * 0.55 + j) * 0.1 * dt;
+        if (driftType === 'horizontal') hDrift2 = Math.cos(t * 0.8 + j * 0.6) * 0.28 * dt;
+        if (driftType === 'diagonal')   hDrift2 = Math.sin(t * 0.5 + j * 0.4) * 0.2 * dt;
+        pPos2[j*3+1] += pVel2[j*3+1] * dt;
+        pPos2[j*3]   += pVel2[j*3] * dt + hDrift2;
+        pPos2[j*3+2] += pVel2[j*3+2] * dt;
+        if (pPos2[j*3+1] > 5) { pPos2[j*3+1] = -5; pPos2[j*3] = (Math.random() - 0.5) * (driftType === 'horizontal' ? 11 : 12); }
+      }
+      pGeo2.attributes.position.needsUpdate = true;
+    }
+
+    // Animate shapes
+    shapes.forEach(function(s, idx) {
+      s.mesh.rotation.x += s.rotSpeed * dt;
+      s.mesh.rotation.y += s.rotSpeed * 0.7 * dt;
+      s.mesh.rotation.z += s.rotSpeed * 0.4 * dt;
+      s.mesh.position.x = s.baseX + Math.sin(t * s.orbitSpeed + idx) * s.orbitAmp;
+      s.mesh.position.y = s.baseY + Math.cos(t * s.orbitSpeed * 0.8 + idx) * s.orbitAmp * 0.6;
+      s.mat.opacity = 0.22 + Math.sin(t * 0.5 + idx) * 0.1;
+    });
+
+    // Animate text planes
+    textPlanes.forEach(function(tp, idx) {
+      tp.mesh.position.x = tp.baseX + Math.sin(t * tp.floatSpeed + idx) * tp.floatAmp;
+      tp.mesh.position.y = tp.baseY + Math.cos(t * tp.floatSpeed * 0.7 + idx) * tp.floatAmp * 0.7;
+      tp.mesh.rotation.y = tp.baseRotY + Math.sin(t * 0.2 + idx) * tp.rotDrift;
+      tp.mesh.material.opacity = 0.12 + Math.sin(t * 0.35 + idx) * 0.06;
+    });
+
+    // Animate rings
+    ringObjects.forEach(function(r) {
+      if (r.rotAxis === 'x') r.mesh.rotation.x += r.rotSpeed * dt;
+      else r.mesh.rotation.z += r.rotSpeed * dt;
+      r.mat.opacity = r.opBase + Math.sin(t * 0.4) * r.opAmp;
+    });
+
+    // Animate hero text — 4 unique entrance styles + shared floating
+    textEntranceTime += dt;
+    heroTextPlanes.forEach(function(h, hi) {
+      var ud = h.mesh.userData;
+      var elapsed = Math.max(textEntranceTime - ud.delay, 0);
+      var dur = 0.85;
+      var e = Math.min(elapsed / dur, 1);
+      var ee = easeInOutCubic(e);
+      var targetOp = ud.targetOpacity;
+      var targetY = h.baseY;
+      var animType = ud.animType;
+
+      if (e < 1) {
+        h.mesh.rotation.set(0, 0, 0);
+        switch (animType) {
+          case 'scaleUp':
+            // Burst in: scale from 0.5*vs, rise up
+            var vs = viewportScale;
+            var s = vs * (0.5 + 0.5 * ee);
+            h.mesh.scale.set(s, s, 1);
+            h.mesh.position.y = targetY * vs + 0.6 * vs * (1 - ee);
+            h.mesh.position.x = 0;
+            h.mesh.position.z = h.baseZ;
+            h.mat.opacity = targetOp * ee;
+            break;
+          case 'slideRight':
+            // Slide from right with overshoot
+            var vs = viewportScale;
+            var xOff = 2.0 * vs * (1 - ee);
+            h.mesh.position.x = xOff;
+            h.mesh.position.y = targetY * vs;
+            h.mesh.position.z = h.baseZ;
+            h.mesh.scale.set(vs, vs, 1);
+            h.mesh.rotation.y = 0.15 * (1 - ee);
+            h.mat.opacity = targetOp * Math.min(elapsed / 0.25, 1);
+            break;
+          case 'depthIn':
+            // Sweep from far z to near
+            var vs = viewportScale;
+            var zOff = 2.5 * (1 - ee);
+            h.mesh.position.z = h.baseZ + zOff;
+            h.mesh.position.y = targetY * vs;
+            h.mesh.position.x = 0;
+            h.mesh.scale.set(vs * (0.7 + 0.3 * ee), vs * (0.7 + 0.3 * ee), 1);
+            h.mat.opacity = targetOp * ee;
+            break;
+          case 'slideLeft':
+            // Slide from left with slight tilt
+            var vs = viewportScale;
+            var xOffL = -2.0 * vs * (1 - ee);
+            h.mesh.position.x = xOffL;
+            h.mesh.position.y = targetY * vs;
+            h.mesh.position.z = h.baseZ;
+            h.mesh.scale.set(vs, vs, 1);
+            h.mesh.rotation.y = -0.15 * (1 - ee);
+            h.mat.opacity = targetOp * Math.min(elapsed / 0.25, 1);
+            break;
+        }
+      } else {
+        // Shared floating — scaled by viewport
+        h.mesh.scale.set(viewportScale, viewportScale, 1);
+        h.mesh.rotation.set(0, 0, 0);
+        var vy = viewportScale;
+        var phase = t * 0.35 + hi * 0.8;
+        h.mesh.position.y = targetY * vy + Math.sin(phase) * 0.1 * vy;
+        h.mesh.position.x = Math.cos(phase * 0.7) * 0.06 * vy;
+        h.mesh.position.z = h.baseZ + Math.sin(phase * 0.5) * 0.12;
+        h.mesh.rotation.y = Math.sin(phase * 0.6) * 0.04;
+        h.mesh.rotation.x = Math.cos(phase * 0.45) * 0.02;
+        h.mat.opacity = targetOp + Math.sin(phase) * 0.03;
+      }
+    });
+
+    // Subtle camera drift
+    camera.position.x = Math.sin(t * 0.15) * 0.25;
+    camera.position.y = 0.3 + Math.cos(t * 0.18) * 0.2;
+    camera.lookAt(0, 0, -0.5);
+
+    renderer.render(scene, camera);
+  }
+
+  // ── Handle reduced motion ──
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    buildScene(0);
+    heroTextPlanes.forEach(function(h) {
+      h.mat.opacity = h.mesh.userData.targetOpacity;
+      h.mesh.scale.set(1, 1, 1);
+      h.mesh.position.y = h.mesh.userData.targetY;
+    });
+    resize();
+    renderer.render(scene, camera);
+    return;
+  }
+
+  buildScene(0);
+  setTheme(0);
+  animate();
+})();
+</script>
+
+<!-- Non-module scripts -->
+<script>
+// ── 3D Cylindrical Partner Carousel ──
+(function() {
+  const partners = [
+    { img: '/assets/images/redtrans_main_138.png', name: 'A社 — 화장품 브랜드', desc: '베트남 식약처 위생허가 취득 및 현지 유통 계약 체결. 론칭 3개월 만에 주요 유통 채널 입점에 성공했습니다.', tags: '화장품 · 위생허가 · 유통계약 · 2024' },
+    { img: '/assets/images/redtrans_main_140.png', name: 'B社 — 전자제품 제조', desc: '하노이 현지 법인 설립 및 투자 라이선스 취득. 공장 설립부터 생산 개시까지 6개월 단축, 안정적인 현지 경영 지원.', tags: '전자 · 법인설립 · 투자라이선스 · 2024' },
+    { img: '/assets/images/redtrans_main_142.png', name: 'C社 — 식품 유통', desc: '베트남 수입 허가 및 현지 파트너 계약 체결. 상표 등록부터 위생 검역까지 원스톱으로 진행했습니다.', tags: '식품 · 수입허가 · 상표등록 · 2023' },
+  ];
+
+  const ring = document.getElementById('partner3dRing');
+  const floor = document.getElementById('partner3dFloor');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!ring) return;
+
+  const TOTAL = 9; // 3 partners × 3 copies
+  const RADIUS = 230; // px translateZ — tighter ring for smaller cards
+  const ANGLE_STEP = 360 / TOTAL; // 40 degrees
+
+  // Build cards in 3D ring
+  const cards = [];
+  for (let i = 0; i < TOTAL; i++) {
+    const p = partners[i % partners.length];
+    const el = document.createElement('div');
+    el.className = 'partner-3d-card';
+    el.setAttribute('data-partner', i % partners.length);
+    el.innerHTML = `<img src="${p.img}" alt="${p.name}" loading="lazy">`;
+    el.style.transform = `rotateY(${i * ANGLE_STEP}deg) translateZ(${RADIUS}px)`;
+    ring.appendChild(el);
+    cards.push({ el, baseAngle: i * ANGLE_STEP, partnerIdx: i % partners.length });
+  }
+
+  // ── State ──
+  let rotY = 0;
+  let autoSpeed = 0.12; // degrees per frame
+  let targetSpeed = 0.12;
+  let isSnapping = false;
+  let rafId = null;
+  let prevPartnerIdx = -1; // track last center partner to avoid per-frame text reset
+
+  // ── Center detection ──
+  function getCenterCard() {
+    let norm = ((rotY % 360) + 360) % 360;
+    let best = null, bestDist = Infinity;
+    cards.forEach(c => {
+      let va = ((c.baseAngle + norm) % 360 + 360) % 360;
+      let d = Math.min(va, 360 - va);
+      if (d < bestDist) { bestDist = d; best = c; }
+    });
+    return best;
+  }
+
+  function updateHighlight() {
+    const center = getCenterCard();
+    cards.forEach(c => c.el.classList.toggle('is-center', c === center));
+    if (center && floor) floor.style.opacity = '1';
+
+    const currentIdx = center.partnerIdx;
+    if (currentIdx === prevPartnerIdx) return; // no change — skip text reset
+    prevPartnerIdx = currentIdx;
+
+    // Sync right panel text — crossfade only when center changes
+    const p = partners[currentIdx];
+    const nameEl = document.getElementById('partnerInfoName');
+    const descEl = document.getElementById('partnerInfoDesc');
+    const tagsEl = document.getElementById('partnerInfoTags');
+    if (nameEl) {
+      nameEl.style.opacity = '0'; nameEl.style.transform = 'translateY(8px)';
+      setTimeout(() => { nameEl.textContent = p.name; nameEl.style.opacity = '1'; nameEl.style.transform = 'translateY(0)'; }, 150);
+    }
+    if (descEl) {
+      descEl.style.opacity = '0'; descEl.style.transform = 'translateY(8px)';
+      setTimeout(() => { descEl.textContent = p.desc; descEl.style.opacity = '1'; descEl.style.transform = 'translateY(0)'; }, 200);
+    }
+    if (tagsEl) {
+      tagsEl.style.opacity = '0';
+      setTimeout(() => { tagsEl.textContent = p.tags; tagsEl.style.opacity = '1'; }, 250);
+    }
+  }
+
+  // ── Auto-rotate loop ──
+  let lastTime = performance.now();
+  function loop(now) {
+    if (!isSnapping && !prefersReduced) {
+      const dt = Math.min(now - lastTime, 50);
+      lastTime = now;
+      autoSpeed += (targetSpeed - autoSpeed) * 0.04;
+      rotY = (rotY + autoSpeed * (dt / 16.67)) % 360;
+      ring.style.transform = `rotateY(${rotY.toFixed(3)}deg)`;
+      updateHighlight();
+    }
+    rafId = requestAnimationFrame(loop);
+  }
+  rafId = requestAnimationFrame(loop);
+
+  // ── Mouse interaction ──
+  const stage = document.getElementById('partner3dStage');
+  stage.addEventListener('mouseenter', () => { targetSpeed = 0.04; });
+  stage.addEventListener('mouseleave', () => { targetSpeed = 0.12; });
+  stage.addEventListener('mousemove', (e) => {
+    if (isSnapping) return;
+    const rect = stage.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    targetSpeed = 0.04 + (x - 0.5) * 0.25;
+  });
+
+  // ── Click to snap ──
+  ring.addEventListener('click', (e) => {
+    const cardEl = e.target.closest('.partner-3d-card');
+    if (!cardEl || isSnapping) return;
+    const idx = Array.from(ring.children).indexOf(cardEl);
+    if (idx < 0) return;
+
+    const targetBase = cards[idx].baseAngle;
+    const norm = ((rotY % 360) + 360) % 360;
+    let delta = ((-norm - targetBase) % 360 + 360) % 360;
+    if (delta > 180) delta -= 360;
+
+    // Instant snap for reduced-motion users
+    if (prefersReduced) {
+      rotY += delta;
+      ring.style.transform = `rotateY(${rotY.toFixed(3)}deg)`;
+      updateHighlight();
+      return;
+    }
+
+    const startY = rotY;
+    const startT = performance.now();
+    const duration = 900;
+
+    isSnapping = true;
+    targetSpeed = 0;
+
+    function snapStep(now) {
+      const elapsed = now - startT;
+      const t = Math.min(elapsed / duration, 1);
+      const e = t === 1 ? 1 : 1 - Math.pow(2, -10 * t); // easeOutExpo
+      rotY = startY + delta * e;
+      ring.style.transform = `rotateY(${rotY.toFixed(3)}deg)`;
+      updateHighlight();
+      if (t < 1) {
+        requestAnimationFrame(snapStep);
+      } else {
+        isSnapping = false;
+        autoSpeed = 0;
+        setTimeout(() => { targetSpeed = 0.12; }, 600);
+      }
+    }
+    requestAnimationFrame(snapStep);
+  });
+
+  // Init highlight
+  updateHighlight();
+})();
+
+// ── Header scroll ──
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// ── Mobile menu ──
+document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('mainNav').classList.toggle('open');
+});
+
+// ── Scroll reveal + observe all reveals (including dynamically added) ──
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+// Observe existing AND wait for dynamically added elements
+setTimeout(() => {
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}, 100);
+
+// ── Process line animation ──
+const processSteps = document.getElementById('processSteps');
+if (processSteps) {
+  new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) processSteps.classList.add('visible-line');
+  }, { threshold: 0.3 }).observe(processSteps);
+}
+
+// ── Counter animation ──
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const counter = entry.target;
+    const target = parseInt(counter.getAttribute('data-target'));
+    const duration = 2000;
+    const start = performance.now();
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      counter.textContent = Math.floor(eased * target).toLocaleString();
+      if (progress < 1) requestAnimationFrame(update);
+      else counter.textContent = target.toLocaleString();
+    }
+    requestAnimationFrame(update);
+    counterObserver.unobserve(counter);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+</script>
+
+</body>
+</html>
